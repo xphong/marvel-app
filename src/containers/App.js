@@ -15,8 +15,8 @@ export class App extends Component {
     const { countries, actions } = this.props;
     
     return (
-      <div className="mainContainer container">
-        <h1>React Redux Starter</h1>
+      <div className="ui main container">
+        <h1>Marvel Search App</h1>
         {countries.isLoading ? <Spinner /> : <Countries countries={countries} actions={actions} />}
       </div>
     );

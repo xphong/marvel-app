@@ -15,22 +15,19 @@ export default class Countries extends Component {
     const {data} = this.props.countries;
 
     return (
-      <div className='tableContainer'>
-        <h3>Countries List</h3>
-        <table className='table table-bordered table-striped'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Capital</th>
-              <th>Population</th>
-              <th>Domain</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(this.renderCountry)}
-          </tbody>
-        </table>
-      </div>
+      <table className='ui table'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Domain</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(this.renderCountry)}
+        </tbody>
+      </table>
     );
   }
 }
