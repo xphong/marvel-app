@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { Router, Route, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import './styles/main.scss';
 
@@ -9,11 +11,17 @@ import App from './containers/App';
 import DevTools from './containers/DevTools';
 
 const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+
+const routes = (
+  <Route path="/" component={App}>
+  </Route>
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <div>
-      <App />
+      <Router history={history} routes={routes} />
       {process.env.NODE_ENV === 'development' ? <DevTools /> : ''}
     </div>
   </Provider>,
