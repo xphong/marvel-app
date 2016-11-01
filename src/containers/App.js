@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Nav from '../components/Nav';
 import Spinner from '../components/Spinner';
 import * as CountriesActions from '../actions/CountriesActions';
 import Countries from '../components/Countries';
@@ -15,9 +16,11 @@ export class App extends Component {
     const { countries, actions } = this.props;
     
     return (
-      <div className="ui main container">
-        <h1>Marvel Search App</h1>
-        {countries.isLoading ? <Spinner /> : <Countries countries={countries} actions={actions} />}
+      <div>
+        <Nav />
+        <div className='ui main container'>
+          {countries.isLoading ? <Spinner /> : <Countries countries={countries} actions={actions} />}
+        </div>
       </div>
     );
   }

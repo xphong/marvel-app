@@ -12,7 +12,12 @@ body {
 }
 
 .main {
-  margin: 20px auto;
+  margin: 80px auto;
+}
+
+.ui.menu .item.route--active {
+  font-weight: bold;
+  background: rgba(0,0,0,.03);
 }
 
 /* Absolute Center CSS Spinner */

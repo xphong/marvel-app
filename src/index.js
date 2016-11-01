@@ -14,7 +14,7 @@ const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
 const routes = (
-  <Route path="/" component={App}>
+  <Route path='/' component={App}>
   </Route>
 );
 
