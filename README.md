@@ -30,10 +30,8 @@ npm run build
 ## Technologies
 
 * ES6
-* React
-* Redux
+* React w/ Redux, React Router, Dev Tools
 * Webpack
-* React Dev Tools
 * Axios
 
 ### Toggle React Dev Tools:
