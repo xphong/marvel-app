@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter",
+  "name": "marvel-react-app",
   "version": "1.0.0",
-  "description": "React Redux Starter",
+  "description": "Marvel React App",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -12,12 +12,7 @@
     "start:prod": "node server.js",
     "lint": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xphong/react-redux-starter.git"
-  },
   "license": "MIT",
-  "homepage": "https://github.com/xphong/react-redux-starter",
   "devDependencies": {
     "autoprefixer": "6.3.1",
     "babel-core": "6.3.15",
