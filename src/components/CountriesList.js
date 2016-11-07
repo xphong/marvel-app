@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Country from './Country';
 
-export default class Countries extends Component {
+export default class CountriesList extends Component {
   constructor(props){
     super(props);
   }
@@ -32,7 +32,7 @@ export default class Countries extends Component {
   }
 }
 
-Countries.propTypes = {
+CountriesList.propTypes = {
   countries: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
