@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './styles/main.scss';
@@ -17,6 +17,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 const routes = (
   <Route path='/' component={App}>
+    <IndexRoute component={Countries}/>
     <Route path="about" component={About} />
     <Route path="countries" component={Countries} />
   </Route>
