@@ -1,27 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './styles/main.scss';
 
 import { configureStore } from './store/configureStore';
-import App from './containers/App';
-import About from './containers/About';
-import Countries from './containers/Countries';
+import routes from './routes';
 import DevTools from './containers/DevTools';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
-
-const routes = (
-  <Route path='/' component={App}>
-    <IndexRoute component={Countries}/>
-    <Route path="about" component={About} />
-    <Route path="countries" component={Countries} />
-  </Route>
-);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IndexLink, Link } from 'react-router';
 
-export const Nav = () => (
+const Nav = () => (
   <div className='ui fixed menu'>
     <div className='ui container'>
       <div className="header item">

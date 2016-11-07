@@ -12,7 +12,7 @@ class Countries extends Component {
   }
 
   render() {
-    const { countries, actions } = this.props;
+    const {countries, actions} = this.props;
     
     return (
       <div>
