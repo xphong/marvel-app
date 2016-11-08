@@ -9,8 +9,8 @@ import Countries from './containers/Countries';
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={MarvelCharacters}/>
-    <Route path="about" component={About} />
-    <Route path="countries" component={Countries} />
+    <Route path='about' component={About} />
+    <Route path='countries' component={Countries} />
   </Route>
 );
 

@@ -21,8 +21,8 @@ export default class MarvelCharacter extends Component {
           </div>
           <div className='extra content'>
             <span className='right floated'>
-              <a href={character.url}>
-                <button className='ui icon orange tiny button'>
+              <a target="_blank" href={character.url}>
+                <button className='ui icon purple tiny button'>
                     More Info
                 </button>
               </a>

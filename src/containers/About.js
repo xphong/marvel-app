@@ -8,9 +8,9 @@ export default class About extends Component {
         <h4>Marvel Search App</h4>
         <ul>
           <li>Searches the Marvel database for the characters</li>
-          <li>Built using <a href="https://github.com/xphong/simple-react-redux-starter" target="_blank">simple-react-redux-starter</a> and the <a href="http://developer.marvel.com/" target="_blank">Marvel API</a></li>
-          <li><a href="https://github.com/xphong/marvel-react-app" target="_blank">Github Link</a></li>
-          <li><a href="http://marvel.com" target="_blank">Data provided by Marvel. © 2016 Marvel</a></li>
+          <li>Built using <a href='https://github.com/xphong/simple-react-redux-starter' target='_blank'>simple-react-redux-starter</a> and the <a href='http://developer.marvel.com/' target='_blank'>Marvel API</a></li>
+          <li><a href='https://github.com/xphong/marvel-react-app' target='_blank'>Github Link</a></li>
+          <li><a href='http://marvel.com' target='_blank'>Data provided by Marvel. © 2016 Marvel</a></li>
         </ul>
       </div>
     );
