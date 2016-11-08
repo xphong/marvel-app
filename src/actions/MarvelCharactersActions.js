@@ -40,7 +40,22 @@ export function fetchMarvelCharactersByName(name) {
       responseType: 'json'
     })
     .then(function(response) {
-      dispatch(receiveMarvelCharacters(response.data.data.results));
+      let data = [];
+      if (response.data) {
+        data = response.data.data.results.map(value => {
+          let tempData = {};
+          
+          tempData.name = value.name;
+          tempData.url = (value.urls[1] ? value.urls[1].url : value.urls[0].url);
+          tempData.image = value.thumbnail.path + '.' + value.thumbnail.extension;
+          tempData.description =  (value.description === '' ? 'No description listed for this character.' : tempData.description = value.description);
+
+          return tempData
+        });
+        console.log(data);
+
+        dispatch(receiveMarvelCharacters(data));
+      }
     })
     .catch(function(response){
       dispatch(receiveError(response.data));

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as MarvelCharacterActions from '../actions/MarvelCharactersActions';
 import Spinner from '../components/Spinner';
 import MarvelSearchCharacterForm from '../components/MarvelSearchCharacterForm';
+import MarvelCharactersList from '../components/MarvelCharactersList';
 
 class MarvelCharacters extends Component {
   render() {
@@ -13,7 +14,7 @@ class MarvelCharacters extends Component {
     return (
       <div>
         <MarvelSearchCharacterForm actions={actions} />
-        {marvelCharacters.isLoading ? <Spinner /> : ''}
+        {marvelCharacters.isLoading ? <Spinner /> : <MarvelCharactersList marvelCharacters={marvelCharacters} />}
       </div>
     );
   }

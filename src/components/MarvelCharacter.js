@@ -9,32 +9,26 @@ export default class MarvelCharacter extends Component {
     const {character} = this.props;
 
     return (
-      <div>
+      <div className='ui card'>
         <div className='image'>
-            <img ng-src='{character.url}'>
+            <img src={character.image} />
         </div>
         <div className='content'>
             <div className='header'>{character.name}</div>
-            <div className='meta'>
-              <a href='{character.url}' target='_blank'>
-                {character.url} 
-                <i className='external icon'></i>
-              </a>
-            </div>
             <div className='description'>
               {character.description}
             </div>
           </div>
           <div className='extra content'>
             <span className='right floated'>
-              <a href='{character.url}'>
+              <a href={character.url}>
                 <button className='ui icon orange tiny button'>
-                    View Content
+                    More Info
                 </button>
               </a>
             </span>
           </div>
-        </div>
+      </div>
     );
   }
 }
