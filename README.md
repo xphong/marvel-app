@@ -1,6 +1,10 @@
 # Marvel React App
 
+React + Marvel API
+
+* Searches the Marvel database for the characters
 * Built with [https://github.com/xphong/simple-react-redux-starter](https://github.com/xphong/simple-react-redux-starter)
+* [Data provided by Marvel. © 2016 Marvel](http://marvel.com)
 
 ## Quickstart
 
