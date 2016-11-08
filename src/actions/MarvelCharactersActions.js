@@ -34,7 +34,7 @@ export function fetchMarvelCharactersByName(name) {
     dispatch(requestMarvelCharactersByName());
     return axios({
       url: url,
-      timeout: 20000,
+      timeout: 10000,
       method: 'get',
       responseType: 'json'
     })
