@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Spinner from '../components/Spinner';
 import * as MarvelCharacterActions from '../actions/MarvelCharactersActions';
+import Spinner from '../components/Spinner';
+import MarvelSearchCharacterForm from '../components/MarvelSearchCharacterForm';
 
 class MarvelCharacters extends Component {
   render() {
@@ -11,7 +12,7 @@ class MarvelCharacters extends Component {
     
     return (
       <div>
-        
+        <MarvelSearchCharacterForm actions={actions} />
       </div>
     );
   }
