@@ -28,7 +28,8 @@ function receiveError(data) {
 }
 
 export function fetchMarvelCharactersByName(name) {
-  const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}`;
+  const timestamp = new Date().getTime();
+  const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}&ts=${timestamp}`;
 
   return function(dispatch) {
     dispatch(requestMarvelCharactersByName());
@@ -39,7 +40,7 @@ export function fetchMarvelCharactersByName(name) {
       responseType: 'json'
     })
     .then(function(response) {
-      dispatch(receiveMarvelCharacters(response.data));
+      dispatch(receiveMarvelCharacters(response.data.data));
     })
     .catch(function(response){
       dispatch(receiveError(response.data));
