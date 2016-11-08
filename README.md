@@ -37,6 +37,7 @@ npm run build
 
 * ES6
 * React w/ Redux, React Router, Dev Tools
+* Semantic UI
 * Webpack
 * Axios
 
