@@ -8,11 +8,12 @@ import MarvelSearchCharacterForm from '../components/MarvelSearchCharacterForm';
 
 class MarvelCharacters extends Component {
   render() {
-    const {characters, actions} = this.props;
+    const {marvelCharacters, actions} = this.props;
     
     return (
       <div>
         <MarvelSearchCharacterForm actions={actions} />
+        {marvelCharacters.isLoading ? <Spinner /> : ''}
       </div>
     );
   }

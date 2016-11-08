@@ -40,7 +40,7 @@ export function fetchMarvelCharactersByName(name) {
       responseType: 'json'
     })
     .then(function(response) {
-      dispatch(receiveMarvelCharacters(response.data.data));
+      dispatch(receiveMarvelCharacters(response.data.data.results));
     })
     .catch(function(response){
       dispatch(receiveError(response.data));
