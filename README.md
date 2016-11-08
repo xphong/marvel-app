@@ -1,5 +1,7 @@
 # Marvel React App
 
+* Built with [https://github.com/xphong/simple-react-redux-starter](https://github.com/xphong/simple-react-redux-starter)
+
 ## Quickstart
 
 Install required dependencies:
