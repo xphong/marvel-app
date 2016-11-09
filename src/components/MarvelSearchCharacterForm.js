@@ -23,11 +23,6 @@ export default class MarvelSearchCharacterForm extends Component {
   handleSearch(event) {
     event.preventDefault();
 
-    if (!this.state.characterName) {
-      alert('Please enter a character name');
-      return;
-    }
-
     this.props.actions.fetchMarvelCharactersByName(this.state.characterName);
     this.resetForm();
   }
