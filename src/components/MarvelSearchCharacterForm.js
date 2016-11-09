@@ -7,13 +7,6 @@ export default class MarvelSearchCharacterForm extends Component {
     this.state = {characterName: null};
   }
 
-  handleSpacesOnKeypress(event) {
-    if (event.which === 32) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
-
   handleInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -45,7 +38,6 @@ export default class MarvelSearchCharacterForm extends Component {
                    name='characterName'
                    placeholder='Character Name'
                    type='text'
-                   onKeyPress={this.handleSpacesOnKeypress}
                    required
                    />
 
