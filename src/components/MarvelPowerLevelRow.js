@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class MarvelPowerLevelRow extends Component {
   constructor(props){
@@ -6,14 +6,19 @@ export default class MarvelPowerLevelRow extends Component {
   }
 
   render() {
-    const {powerlevel} = this.props;
+    const {characterName, powerlevel} = this.props;
 
     return (
       <tr>
-        <td>{powerlevel.Intelligence}</td>
+        <td>{characterName}</td>
         <td>{powerlevel.Intelligence}</td>
         <td>{powerlevel.Intelligence}</td>
       </tr>
     );
   }
 }
+
+MarvelPowerLevelRow.propTypes = {
+  characterName: PropTypes.string.isRequired,
+  powerlevel: PropTypes.object.isRequired
+};

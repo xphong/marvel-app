@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class MarvelCharacter extends Component {
   constructor(props){
@@ -32,3 +32,7 @@ export default class MarvelCharacter extends Component {
     );
   }
 }
+
+MarvelCharacter.propTypes = {
+  character: PropTypes.object.isRequired
+};
