@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class MarvelSearchCharacterForm extends Component {
+export default class SearchCharacterForm extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {characterName: null};
@@ -16,7 +16,7 @@ export default class MarvelSearchCharacterForm extends Component {
   handleSearch(event) {
     event.preventDefault();
 
-    this.props.actions.fetchMarvelCharactersByName(this.state.characterName);
+    this.props.actions.fetchCharactersByName(this.state.characterName);
     this.resetForm();
   }
 

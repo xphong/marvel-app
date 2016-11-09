@@ -5,13 +5,13 @@ import { POWER_LEVELS } from '../constants/AppDataPowerLevels';
 
 function requestPowerLevels() {
   return {
-    type: types.REQUEST_MARVEL_POWERLEVELS
+    type: types.REQUEST_POWERLEVELS
   };
 }
 
 function receivePowerLevels(data) {
   return{
-    type: types.RECEIVE_MARVEL_POWERLEVELS,
+    type: types.RECEIVE_POWERLEVELS,
     payload: {
       data
     }
@@ -20,7 +20,7 @@ function receivePowerLevels(data) {
 
 function receivePowerLevelsError(data) {
   return {
-    type: types.RECEIVE_MARVEL_POWERLEVELS_ERROR,
+    type: types.RECEIVE_POWERLEVELS_ERROR,
     payload: {
       data
     }
@@ -42,10 +42,10 @@ function calculatePowerLevel(character) {
     + parseInt(character.Speed)
     + parseInt(character.Durability)
     + parseInt(character.Energy_Projection)
-    + parseInt(character.Fighting_Ability)) / numberOfSkills).toFixed();
+    + parseInt(character.Fighting_Ability)) / numberOfSkills).toFixed(2);
 }
 
-export function fetchMarvelPowerLevels() {
+export function fetchPowerLevels() {
   return function(dispatch) {
     let powerLevelsData = Object.keys(POWER_LEVELS).map(createPowerLevelData);
 

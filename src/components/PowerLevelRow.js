@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class MarvelPowerLevelRow extends Component {
+export default class PowerLevelRow extends Component {
   constructor(props){
     super(props);
   }
@@ -22,6 +22,6 @@ export default class MarvelPowerLevelRow extends Component {
   }
 }
 
-MarvelPowerLevelRow.propTypes = {
+PowerLevelRow.propTypes = {
   characterData: PropTypes.object.isRequired
 };

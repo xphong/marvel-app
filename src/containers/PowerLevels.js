@@ -3,39 +3,39 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Spinner from '../components/Spinner';
-import * as MarvelPowerLevelActions from '../actions/MarvelPowerLevelActions';
-import MarvelPowerLevelList from '../components/MarvelPowerLevelList';
+import * as PowerLevelActions from '../actions/PowerLevelActions';
+import PowerLevelList from '../components/PowerLevelList';
 
 class PowerLevels extends Component {
   componentDidMount() {
-    this.props.actions.fetchMarvelPowerLevels();
+    this.props.actions.fetchPowerLevels();
   }
 
   render() {
-    const {marvelPowerLevels, actions} = this.props;
+    const {powerLevels, actions} = this.props;
     
     return (
       <div>
-        {marvelPowerLevels.isLoading ? <Spinner /> : <MarvelPowerLevelList marvelPowerLevels={marvelPowerLevels} actions={actions} />}
+        {powerLevels.isLoading ? <Spinner /> : <PowerLevelList powerLevels={powerLevels} actions={actions} />}
       </div>
     );
   }
 }
 
 PowerLevels.propTypes = {
-  marvelPowerLevels: PropTypes.object.isRequired,
+  powerLevels: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    marvelPowerLevels: state.marvelPowerLevels
+    powerLevels: state.powerLevels
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(MarvelPowerLevelActions, dispatch)
+    actions: bindActionCreators(PowerLevelActions, dispatch)
   };
 }
 

@@ -6,13 +6,13 @@ const INITIAL_STATE = {
   error: false
 };
 
-export default function marvelPowerLevelsReducer(state = INITIAL_STATE, action = null) {
+export default function powerLevelsReducer(state = INITIAL_STATE, action = null) {
   switch(action.type) {
     case types.RECEIVE_POWERLEVELS_ERROR:
       return Object.assign({}, state, {isLoading: false, data: action.payload.data, error: true});
-    case types.RECEIVE_MARVEL_POWERLEVELS:
+    case types.RECEIVE_POWERLEVELS:
       return Object.assign({}, state, {isLoading: false, data: action.payload.data, error: false });
-    case types.REQUEST_MARVEL_POWERLEVELS:
+    case types.REQUEST_POWERLEVELS:
       return Object.assign({}, state, {isLoading: true, error: false });
     default:
       return state;

@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 
-import MarvelPowerLevelRow from './MarvelPowerLevelRow';
+import PowerLevelRow from './PowerLevelRow';
 
-export default class MarvelPowerLevelList extends Component {
+export default class PowerLevelList extends Component {
   constructor(props){
     super(props);
   }
 
   renderPowerLevelRow(characterData) {
-    return <MarvelPowerLevelRow key={characterData.Name} characterData={characterData} />;
+    return <PowerLevelRow key={characterData.Name} characterData={characterData} />;
   }
 
   render() {
-    const {data} = this.props.marvelPowerLevels;
+    const {data} = this.props.powerLevels;
 
     return (
       <table className='ui table'>
@@ -31,7 +31,7 @@ export default class MarvelPowerLevelList extends Component {
   }
 }
 
-MarvelPowerLevelList.propTypes = {
-  marvelPowerLevels: PropTypes.object.isRequired,
+PowerLevelList.propTypes = {
+  powerLevels: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };

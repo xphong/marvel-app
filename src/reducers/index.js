@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import marvelPowerLevels from './marvelPowerLevels';
-import marvelCharacters from './marvelCharacters';
+import powerLevels from './powerLevels';
+import characters from './characters';
 
 const rootReducer = combineReducers({
-  marvelPowerLevels,
-  marvelCharacters,
+  powerLevels,
+  characters,
   routing: routerReducer
 });
 
