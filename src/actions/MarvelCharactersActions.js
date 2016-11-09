@@ -27,6 +27,17 @@ function receiveError(data) {
   };
 }
 
+function createMarvelCharacterData(data) {
+  let marvelCharacterData = {};
+
+  marvelCharacterData.name = data.name;
+  marvelCharacterData.url = (data.urls[1] ? data.urls[1].url : data.urls[0].url);
+  marvelCharacterData.image = data.thumbnail.path + '.' + data.thumbnail.extension;
+  marvelCharacterData.description =  (data.description === '' ? 'No description listed for this character.' : marvelCharacterData.description = data.description);
+
+  return marvelCharacterData;
+}
+
 export function fetchMarvelCharactersByName(name) {
   const timestamp = new Date().getTime();
   const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}&ts=${timestamp}`;
@@ -43,16 +54,7 @@ export function fetchMarvelCharactersByName(name) {
       let data = [];
 
       if (response.data) {
-        data = response.data.data.results.map(value => {
-          let tempData = {};
-
-          tempData.name = value.name;
-          tempData.url = (value.urls[1] ? value.urls[1].url : value.urls[0].url);
-          tempData.image = value.thumbnail.path + '.' + value.thumbnail.extension;
-          tempData.description =  (value.description === '' ? 'No description listed for this character.' : tempData.description = value.description);
-
-          return tempData;
-        });
+        data = response.data.data.results.map(createMarvelCharacterData);
 
         dispatch(receiveMarvelCharacters(data));
       }
