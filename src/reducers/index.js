@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import countries from './countries';
+import marvelPowerLevels from './marvelPowerLevels';
 import marvelCharacters from './marvelCharacters';
 
 const rootReducer = combineReducers({
-  countries,
+  marvelPowerLevels,
   marvelCharacters,
   routing: routerReducer
 });
