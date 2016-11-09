@@ -7,10 +7,8 @@ export default class MarvelPowerLevelList extends Component {
     super(props);
   }
 
-  renderPowerLevelRow(powerLevelKey) {
-    const {data} = this.props.marvelPowerLevels;
-
-    return <MarvelPowerLevelRow key={powerLevelKey} characterName={powerLevelKey} powerlevel={data[powerLevelKey]} />;
+  renderPowerLevelRow(characterData) {
+    return <MarvelPowerLevelRow key={characterData.Name} characterData={characterData} />;
   }
 
   render() {
@@ -21,12 +19,12 @@ export default class MarvelPowerLevelList extends Component {
         <thead>
           <tr>
             <th>Character Name</th>
-            <th>Power Level</th>
-            <th>Profile Link</th>
+            <th>Average Power Level</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody>
-          {Object.keys(data).map(this.renderPowerLevelRow.bind(this))}
+          {data.map(this.renderPowerLevelRow)}
         </tbody>
       </table>
     );

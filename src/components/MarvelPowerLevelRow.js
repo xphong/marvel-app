@@ -6,19 +6,22 @@ export default class MarvelPowerLevelRow extends Component {
   }
 
   render() {
-    const {characterName, powerlevel} = this.props;
+    const {characterData} = this.props;
 
     return (
       <tr>
-        <td>{characterName}</td>
-        <td>{powerlevel.Intelligence}</td>
-        <td>{powerlevel.Intelligence}</td>
+        <td>{characterData.Name}</td>
+        <td>{characterData.AveragePowerLevel}</td>
+        <td>
+          <a href={characterData.Profile_Link} target='_blank'>
+              <i className='external icon'></i>
+          </a>
+        </td>
       </tr>
     );
   }
 }
 
 MarvelPowerLevelRow.propTypes = {
-  characterName: PropTypes.string.isRequired,
-  powerlevel: PropTypes.object.isRequired
+  characterData: PropTypes.object.isRequired
 };
