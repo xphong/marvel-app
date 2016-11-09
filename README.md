@@ -43,3 +43,10 @@ npm run build
 
 ### Toggle React Dev Tools:
 <kbd>CTRL</kbd> + <kbd>H</kbd>
+
+
+### TODO:
+
+* Show individual power level in radar chart
+* Sort table
+* Search table
