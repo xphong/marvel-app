@@ -42,7 +42,7 @@ export function fetchCharactersByName(name) {
   const timestamp = new Date().getTime();
   const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}&ts=${timestamp}`;
 
-  return function(dispatch) {
+  return dispatch => {
     dispatch(requestCharactersByName());
     return axios({
       url: url,
