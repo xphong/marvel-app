@@ -10,8 +10,8 @@ const Nav = () => (
       <IndexLink to='/' className='item' activeClassName='route--active'>
         Home
       </IndexLink>
-      <Link to='/countries' className='item' activeClassName='route--active'>
-        Countries
+      <Link to='/powerlevels' className='item' activeClassName='route--active'>
+        Power Levels
       </Link>
       <Link to='/about' className='item' activeClassName='route--active'>
         About

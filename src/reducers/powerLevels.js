@@ -6,13 +6,13 @@ const INITIAL_STATE = {
   error: false
 };
 
-export default function countriesReducer(state = INITIAL_STATE, action = null) {
+export default function powerLevelsReducer(state = INITIAL_STATE, action = null) {
   switch(action.type) {
-    case types.RECEIVE_ERROR:
+    case types.RECEIVE_POWERLEVELS_ERROR:
       return Object.assign({}, state, {isLoading: false, data: action.payload.data, error: true});
-    case types.RECEIVE_COUNTRIES:
+    case types.RECEIVE_POWERLEVELS:
       return Object.assign({}, state, {isLoading: false, data: action.payload.data, error: false });
-    case types.REQUEST_COUNTRIES:
+    case types.REQUEST_POWERLEVELS:
       return Object.assign({}, state, {isLoading: true, error: false });
     default:
       return state;
