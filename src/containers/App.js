@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import Nav from '../components/Templates/Nav';
+import Nav from '../components/ui/Nav';
 
 export default class App extends Component {
 

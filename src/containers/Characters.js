@@ -3,9 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as CharactersActions from '../actions/CharactersActions';
-import Spinner from '../components/Templates/Spinner';
-import SearchCharacterForm from '../components/Characters/SearchCharacterForm';
-import CharactersList from '../components/Characters/CharactersList';
+import Spinner from '../components/ui/Spinner';
+import SearchCharacterForm from '../components/characters/SearchCharacterForm';
+import CharactersList from '../components/characters/CharactersList';
 
 class Characters extends Component {
   render() {
