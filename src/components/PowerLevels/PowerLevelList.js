@@ -20,7 +20,7 @@ export default class PowerLevelList extends Component {
           <tr>
             <th>Character Name</th>
             <th>Average Power Level</th>
-            <th>Link</th>
+            <th>More Info Link</th>
           </tr>
         </thead>
         <tbody>
