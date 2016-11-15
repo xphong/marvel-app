@@ -41,26 +41,27 @@ function createCharacterData(data) {
 export function fetchCharactersByName(name) {
   const timestamp = new Date().getTime();
   const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}&ts=${timestamp}`;
+  const opts = {
+    url: url,
+    timeout: 10000,
+    method: 'get',
+    responseType: 'json'
+  };
 
   return dispatch => {
     dispatch(requestCharactersByName());
-    return axios({
-      url: url,
-      timeout: 10000,
-      method: 'get',
-      responseType: 'json'
-    })
-    .then(function(response) {
-      let data = [];
+    return axios(opts)
+      .then(function(response) {
+        let data = [];
 
-      if (response.data) {
-        data = response.data.data.results.map(createCharacterData);
+        if (response.data) {
+          data = response.data.data.results.map(createCharacterData);
 
-        dispatch(receiveCharacters(data));
-      }
-    })
-    .catch(function(response){
-      dispatch(receiveError(response.data));
-    });
+          dispatch(receiveCharacters(data));
+        }
+      })
+      .catch(function(response){
+        dispatch(receiveError(response.data));
+      });
   };
 }
