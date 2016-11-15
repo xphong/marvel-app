@@ -50,3 +50,4 @@ npm run build
 * Show individual power level in radar chart
 * Sort table
 * Search table
+* REST service
