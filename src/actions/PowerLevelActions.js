@@ -10,7 +10,7 @@ function requestPowerLevels() {
 }
 
 function receivePowerLevels(data) {
-  return{
+  return {
     type: types.RECEIVE_POWERLEVELS,
     payload: {
       data
@@ -45,9 +45,23 @@ function calculatePowerLevel(character) {
     + parseInt(character.Fighting_Ability)) / numberOfSkills).toFixed(2);
 }
 
+function sortCharactersByName(data) {
+  var sortedData = data.slice(0);
+
+  sortedData.sort((a, b) => {
+    var textA = a.Name.toUpperCase();
+    var textB = b.Name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
+
+  return sortedData;
+}
+
 export function fetchPowerLevels() {
   return function(dispatch) {
     let powerLevelsData = Object.keys(POWER_LEVELS).map(createPowerLevelData);
+
+    powerLevelsData = sortCharactersByName(powerLevelsData);
 
     dispatch(receivePowerLevels(powerLevelsData));
   };
