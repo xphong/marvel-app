@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Spinner from '../components/Spinner';
+import Spinner from '../components/Templates/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
-import PowerLevelList from '../components/PowerLevelList';
+import PowerLevelList from '../components/PowerLevels/PowerLevelList';
 
 class PowerLevels extends Component {
   componentDidMount() {
