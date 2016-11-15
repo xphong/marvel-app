@@ -7,8 +7,8 @@ export default class PowerLevelList extends Component {
     super(props);
   }
 
-  renderPowerLevelRow(characterData) {
-    return <PowerLevelRow key={characterData.Name} characterData={characterData} />;
+  renderPowerLevelRow(characterData, index) {
+    return <PowerLevelRow key={characterData.Name} characterData={characterData} index={index} />;
   }
 
   render() {

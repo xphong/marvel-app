@@ -11,6 +11,7 @@ const routes = (
     <IndexRoute component={Characters}/>
     <Route path='about' component={About} />
     <Route path='powerlevels' component={PowerLevels} />
+    <Route path='powerlevels/:id' component={PowerLevels} />
   </Route>
 );
 

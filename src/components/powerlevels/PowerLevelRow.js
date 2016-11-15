@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 export default class PowerLevelRow extends Component {
   constructor(props){
@@ -6,11 +7,15 @@ export default class PowerLevelRow extends Component {
   }
 
   render() {
-    const {characterData} = this.props;
+    const {characterData, index} = this.props;
 
     return (
       <tr>
-        <td>{characterData.Name}</td>
+        <td>
+          <Link to={`/powerlevels/${index}`}>
+            {characterData.Name}
+          </Link>
+        </td>
         <td>{characterData.AveragePowerLevel}</td>
         <td>
           <a href={characterData.Profile_Link} target='_blank'>
@@ -23,5 +28,6 @@ export default class PowerLevelRow extends Component {
 }
 
 PowerLevelRow.propTypes = {
-  characterData: PropTypes.object.isRequired
+  characterData: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired
 };
