@@ -59,6 +59,7 @@ function sortCharactersByName(data) {
 
 export function fetchPowerLevels() {
   return dispatch => {
+    dispatch(requestPowerLevels());
     let powerLevelsData = Object.keys(POWER_LEVELS).map(createPowerLevelData);
 
     powerLevelsData = sortCharactersByName(powerLevelsData);
