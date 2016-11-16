@@ -301,7 +301,7 @@ export const POWER_LEVELS = {
     'Energy_Projection': '5',
     'Fighting_Ability': '4'
   },
-  'Wolverine (James_Logan Howlett)': {
+  'Wolverine (James Logan Howlett)': {
     'Profile_Link': 'http://marvel.wikia.com/Wolverine_(James_%22Logan%22_Howlett)',
     'Image_Link': 'http://static3.wikia.nocookie.net/__cb20130602045953/marveldatabase/images/f/f8/James_Howlett_%28Earth-616%29_0040.jpg',
     'Intelligence': '2',
