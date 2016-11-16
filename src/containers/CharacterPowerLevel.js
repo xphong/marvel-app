@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
-import CharacterPowerLevelInfo from '../components/powerlevels/CharacterPowerLevelInfo';
+import CharacterPowerLevelInfo from '../components/characterpowerlevels/CharacterPowerLevelInfo';
 
 class CharacterPowerLevel extends Component {
   componentDidMount() {
