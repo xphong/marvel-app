@@ -5,7 +5,7 @@ const Nav = () => (
   <div className='ui fixed menu'>
     <div className='ui container'>
       <div className='header item'>
-        Marvel Search App
+        Marvel App
       </div>
       <IndexLink to='/' className='item' activeClassName='route--active'>
         Home
