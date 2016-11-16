@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
+import CharacterPowerLevelInfo from '../components/powerlevels/CharacterPowerLevelInfo';
 
 class CharacterPowerLevel extends Component {
   componentDidMount() {
@@ -12,19 +13,12 @@ class CharacterPowerLevel extends Component {
     }
   }
 
-  getPowerLevelsById(id, powerLevelData) {
-    return powerLevelData[id];
-  }
-
   render() {
-    const {getPowerLevelsById} = this;
     const {powerLevels, params} = this.props;
-    const currentCharacter = getPowerLevelsById(params.id, powerLevels.data);
 
     return (
       <div>
-        COOOOOOOOOL
-        {powerLevels.isLoading ? <Spinner /> : ''}
+        {powerLevels.isLoading ? <Spinner /> : <CharacterPowerLevelInfo id={params.id} powerLevels={powerLevels} />}
       </div>
     );
   }

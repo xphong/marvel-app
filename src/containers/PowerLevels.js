@@ -12,7 +12,7 @@ class PowerLevels extends Component {
   }
 
   render() {
-    const {powerLevels, actions} = this.props;
+    const {powerLevels, actions} = this.props;    
     
     return (
       <div>
