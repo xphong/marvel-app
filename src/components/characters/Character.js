@@ -9,7 +9,7 @@ export default class Character extends Component {
     const {character} = this.props;
 
     return (
-      <div className='ui card'>
+      <div className='ui card fadeIn-animation'>
         <div className='image'>
             <img src={character.image} />
         </div>

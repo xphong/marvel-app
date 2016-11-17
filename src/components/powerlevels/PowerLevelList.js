@@ -15,7 +15,7 @@ export default class PowerLevelList extends Component {
     const {data} = this.props.powerLevels;
 
     return (
-      <table className='ui table'>
+      <table className='ui table fadeIn-animation'>
         <thead>
           <tr>
             <th>Character Name</th>

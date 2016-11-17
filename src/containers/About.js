@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class About extends Component {
   render() {
     return (
-      <div>
+      <div className='fadeIn-animation'>
         <h1>About</h1>
         <h4>Marvel Search App</h4>
         <ul>
