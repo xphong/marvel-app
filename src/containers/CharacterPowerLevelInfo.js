@@ -9,15 +9,29 @@ export default class CharacterPowerLevelInfo extends Component {
   }
 
   getCharacterChartData(character) {
-    return {
-      labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    const labels = ['Intelligence', 'Strength', 'Speed', 'Durability', 'Energy Projection', 'Fighting Ability'];
+    const label = 'Character Data Set';
+    let characterChartData = {};
+    let data = [];
+
+    data.push(character.Intelligence);
+    data.push(character.Strength);
+    data.push(character.Speed);
+    data.push(character.Durability);
+    data.push(character.Energy_Projection);
+    data.push(character.Fighting_Ability);
+
+    characterChartData = {
+      labels,
       datasets: [
         {
-          label: "Character Data Set",
-          data: [28, 48, 40, 19, 96, 27, 100]
+          label,
+          data
         }
       ]
     };
+
+    return characterChartData;
   }
 
   render() {
