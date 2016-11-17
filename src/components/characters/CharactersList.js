@@ -11,12 +11,36 @@ export default class CharactersList extends Component {
     return <Character key={character.name} character={character} />;
   }
 
+  renderServerError() {
+    return (
+      <div className='ui message red'>
+        Server Error
+      </div>
+    );
+  }
+
+  renderCharactersFound() {
+    return (
+      <div className='ui message orange'>
+        No characters found
+      </div>
+    );
+  }
+
   render() {
-    const {data} = this.props.characters;
+    const {characters} = this.props;
+
+    if (characters.error) {
+      return this.renderServerError();
+    }
+
+    if (!characters.data.length && characters.isFetched) {
+      return this.renderCharactersFound();
+    }
 
     return (
       <div className='ui characters-list cards'>
-        {data.map(this.renderCharacter)}
+        {characters.data.map(this.renderCharacter)}
       </div>
     );
   }
