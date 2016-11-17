@@ -11,9 +11,7 @@ export default class CharacterPowerLevelRadarChart extends Component {
     const {characterChartData} = this.props;
 
     return (
-      <div className='chart'>
-        <RadarChart data={characterChartData} width='350' height='350'/>
-      </div>
+      <RadarChart className='chart' data={characterChartData} width='350' height='350'/>
     );
   }
 }

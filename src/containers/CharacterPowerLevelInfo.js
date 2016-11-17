@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import CharacterPowerLevelInfoDisplay from '../components/characterpowerlevels/CharacterPowerLevelInfoDisplay';
 import CharacterPowerLevelRadarChart from '../components/characterpowerlevels/CharacterPowerLevelRadarChart';
+import CharacterPowerLevelBarChart from '../components/characterpowerlevels/CharacterPowerLevelBarChart';
 
 export default class CharacterPowerLevelInfo extends Component {
   constructor(props){
@@ -11,6 +12,13 @@ export default class CharacterPowerLevelInfo extends Component {
   getCharacterChartData(character) {
     const labels = ['Intelligence', 'Strength', 'Speed', 'Durability', 'Energy Projection', 'Fighting Ability'];
     const label = 'Character Data Set';
+    const backgroundColor = [
+      '#FF6384',
+      '#4BC0C0',
+      '#FFCE56',
+      '#E7E9ED',
+      '#36A2EB'
+    ];
     let characterChartData = {};
     let data = [];
 
@@ -26,6 +34,7 @@ export default class CharacterPowerLevelInfo extends Component {
       datasets: [
         {
           label,
+          backgroundColor,
           data
         }
       ]
@@ -48,7 +57,10 @@ export default class CharacterPowerLevelInfo extends Component {
     return (
       <div className='ui container center aligned'>
         <CharacterPowerLevelInfoDisplay character={character} />
-        <CharacterPowerLevelRadarChart characterChartData={characterChartData} />
+        <div className='chart-area'>
+          <CharacterPowerLevelRadarChart characterChartData={characterChartData} />
+          <CharacterPowerLevelBarChart characterChartData={characterChartData} />
+        </div>
       </div>
     );
   }
