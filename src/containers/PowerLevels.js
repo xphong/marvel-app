@@ -15,7 +15,7 @@ class PowerLevels extends Component {
     const {powerLevels, actions} = this.props;    
     
     return (
-      <div>
+      <div className='fadeIn-page-animation'>
         {powerLevels.isLoading ? <Spinner /> : <PowerLevelList powerLevels={powerLevels} actions={actions} />}
       </div>
     );
