@@ -7,28 +7,17 @@ export default class CharacterPowerLevelRadarChart extends Component {
     super(props);
   }
 
-  getCharacterChartData(character) {
-    return {
-      labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-      datasets: [
-        {
-          label: "Character Data Set",
-          data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
-    };
-  }
-
   render() {
-    const {character} = this.props;
-    const characterChartData = this.getCharacterChartData(character);
+    const {characterChartData} = this.props;
 
     return (
-        <RadarChart data={characterChartData} width='600' height='400'/>
+      <div className='chart'>
+        <RadarChart data={characterChartData} width='350' height='350'/>
+      </div>
     );
   }
 }
 
 CharacterPowerLevelRadarChart.propTypes = {
-  character: PropTypes.object.isRequired
+  characterChartData: PropTypes.object.isRequired
 };
