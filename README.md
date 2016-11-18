@@ -47,7 +47,7 @@ npm run build
 
 ### TODO:
 
-* Show individual power level in radar chart
 * Sort table
 * Search table
 * REST service
+* Unit tests
