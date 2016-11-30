@@ -1,10 +1,18 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
-const config = require('./webpack.config.prod');
 
 const app = express();
-const compiler = webpack(config);
+
+let config, compiler;
+
+if (app.get('env') === 'development') {
+  config = require('./webpack.config.dev');
+} else if (app.get('env') === 'production') {
+  config = require('./webpack.config.prod');
+}
+
+compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,

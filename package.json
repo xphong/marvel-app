@@ -7,9 +7,9 @@
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "dev": "cross-env NODE_ENV=development npm start",
-    "start": "node devServer.js",
+    "start": "node server.js NODE_ENV=development",
     "prod": "cross-env NODE_ENV=production npm run start:prod",
-    "start:prod": "node server.js",
+    "start:prod": "node server.js NODE_ENV=production",
     "lint": "eslint src"
   },
   "license": "MIT",
