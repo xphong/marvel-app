@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as types from '../constants/ActionTypes';
-import { POWER_LEVELS } from '../constants/AppDataPowerLevels';
+import { LOCAL_ENDPOINT } from '../constants/AppConstants';
 
 function requestPowerLevels() {
   return {
@@ -27,11 +27,9 @@ function receivePowerLevelsError(data) {
   };
 }
 
-function createPowerLevelData(powerLevelKey) {
-  let powerLevelData = POWER_LEVELS[powerLevelKey];
-  powerLevelData.Name = powerLevelKey;
-  powerLevelData.AveragePowerLevel = calculatePowerLevel(powerLevelData);
-  return powerLevelData;
+function createPowerLevelData(powerlevel) {
+  powerlevel.AveragePowerLevel = calculatePowerLevel(powerlevel);
+  return powerlevel;
 }
 
 function calculatePowerLevel(character) {
@@ -58,12 +56,30 @@ function sortCharactersByName(data) {
 }
 
 export function fetchPowerLevels() {
+  const url = `${LOCAL_ENDPOINT}powerlevels`;
+  const opts = {
+    url: url,
+    timeout: 10000,
+    method: 'get',
+    responseType: 'json'
+  };
+
   return dispatch => {
     dispatch(requestPowerLevels());
-    let powerLevelsData = Object.keys(POWER_LEVELS).map(createPowerLevelData);
+    return axios(opts)
+      .then(function(response) {
+        let powerLevelsData = [];
 
-    powerLevelsData = sortCharactersByName(powerLevelsData);
+        if (response.data) {
+          powerLevelsData = response.data;
+          powerLevelsData.map(createPowerLevelData);
+          powerLevelsData = sortCharactersByName(response.data);
 
-    dispatch(receivePowerLevels(powerLevelsData));
+          dispatch(receivePowerLevels(powerLevelsData));
+        }
+      })
+      .catch(function(response){
+        dispatch(receiveError(response.data));
+      });
   };
 }
