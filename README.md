@@ -47,6 +47,7 @@ mongoimport --db marvel --collection powerlevels --type json --file data/powerle
 * Semantic UI
 * Webpack
 * Axios
+* Node w/ Express
 * MongoDB w/ Mongoose
 
 ### Toggle React Dev Tools:
