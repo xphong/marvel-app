@@ -33,6 +33,13 @@ Deploy prod:
 npm run build
 ```
 
+## Import Mongo DB
+
+Import power levels data:
+```
+mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
+```
+
 ## Technologies
 
 * ES6
@@ -40,6 +47,7 @@ npm run build
 * Semantic UI
 * Webpack
 * Axios
+* MongoDB w/ Mongoose
 
 ### Toggle React Dev Tools:
 <kbd>CTRL</kbd> + <kbd>H</kbd>
