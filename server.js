@@ -6,7 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const config = require('./api/config');
+const config = require('./server/config');
 
 const app = express();
 
@@ -34,7 +34,7 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 }));
 app.use(webpackHotMiddleware(webpackCompiler));
 
-app.use('/api/v1/powerlevels', require('./api/powerlevels/powerlevelsRoutes'));
+app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
