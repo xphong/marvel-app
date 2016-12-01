@@ -1,6 +1,6 @@
-# Marvel React App
+# Marvel App
 
-React + Marvel API
+React + Node + MongoDB + Marvel API
 
 * Searches the Marvel database for the characters
 * Built with [https://github.com/xphong/simple-react-redux-starter](https://github.com/xphong/simple-react-redux-starter)
@@ -10,53 +10,40 @@ React + Marvel API
 
 Install required dependencies:
 ```
+npm install yarn -g
 yarn
 ```
 
-Run development server:
-```
-npm run dev
-```
+Run development server (port 3000): `npm run dev`
 
-Run prod:
-```
-npm run prod
-```
+Run production server: `npm run prod`
 
-Browser:
-```
-open http://localhost:3000/
-```
+Deploy production build: `npm run build`
 
-Deploy prod:
-```
-npm run build
-```
-
-## Import Mongo DB
+## Import Mongo Database Collection
 
 Import power levels data:
 ```
 mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 ```
 
+### Toggle React Dev Tools:
+<kbd>CTRL</kbd> + <kbd>H</kbd>
+
+
 ## Technologies
 
 * ES6
 * React w/ Redux, React Router, Dev Tools
+* Node w/ Express
+* MongoDB w/ Mongoose
 * Semantic UI
 * Webpack
 * Axios
-* Node w/ Express
-* MongoDB w/ Mongoose
-
-### Toggle React Dev Tools:
-<kbd>CTRL</kbd> + <kbd>H</kbd>
-
 
 ### TODO:
 
 * Sort table
 * Search table
-* Unit tests
+* Unit/Integration tests
 * React server-side rendering
