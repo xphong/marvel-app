@@ -1,35 +1,81 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const React = require('react');
+const ReactDOM = require('react-dom/server');
+const Router = require('react-router');
+const routes = require('./client/routes');
+
+const config = require('./server/config');
 
 const app = express();
 
-let config, compiler;
+let webpackConfig;
 
 if (app.get('env') === 'development') {
-  config = require('./webpack.config.dev');
+  webpackConfig = require('./webpack.config.dev');
 } else if (app.get('env') === 'production') {
-  config = require('./webpack.config.prod');
+  webpackConfig = require('./webpack.config.prod');
 }
 
-compiler = webpack(config);
+let webpackCompiler = webpack(webpackConfig);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-app.use(require('webpack-hot-middleware')(compiler));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+mongoose.connect(config.database);
+mongoose.connection.on('error', function() {
+  console.info('Error: Could not connect to MongoDB.');
 });
 
-app.listen(3000, 'localhost', (err) => {
+app.set('port', process.env.PORT || 3000);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(webpackDevMiddleware(webpackCompiler, {
+  noInfo: true,
+  publicPath: webpackConfig.output.publicPath
+}));
+app.use(webpackHotMiddleware(webpackCompiler));
+
+app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
+
+
+app.use(function(req, res) {
+  Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
+    if (err) {
+      res.status(500).send(err.message)
+    } else if (redirectLocation) {
+      res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
+    } else if (renderProps) {
+      const html = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+          </head>
+          
+          <body>
+            <div id="root"></div>
+          </body>
+          
+          <script src="/static/bundle.js"></script>
+        </html>
+      `;
+
+      res.status(200).send(html);
+    } else {
+      res.status(404).send('Page Not Found')
+    }
+  });
+});
+
+app.listen(app.get('port'), 'localhost', (err) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:3000');
+  console.log('Listening on port ' + app.get('port'));
 });
