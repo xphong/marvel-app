@@ -10,7 +10,7 @@ const config = require('./api/config');
 
 const app = express();
 
-let webpackConfig, webpackCompiler;
+let webpackConfig;
 
 if (app.get('env') === 'development') {
   webpackConfig = require('./webpack.config.dev');
@@ -18,7 +18,7 @@ if (app.get('env') === 'development') {
   webpackConfig = require('./webpack.config.prod');
 }
 
-webpackCompiler = webpack(webpackConfig);
+let webpackCompiler = webpack(webpackConfig);
 
 mongoose.connect(config.database);
 mongoose.connection.on('error', function() {
@@ -34,7 +34,9 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 }));
 app.use(webpackHotMiddleware(webpackCompiler));
 
-app.get('*', (req, res) => {
+app.use('/api/v1/powerlevels', require('./api/powerlevels/powerlevelsRoutes'));
+
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
