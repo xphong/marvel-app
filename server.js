@@ -5,6 +5,10 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const React = require('react');
+const ReactDOM = require('react-dom/server');
+const Router = require('react-router');
+const routes = require('./client/routes');
 
 const config = require('./server/config');
 
@@ -36,8 +40,35 @@ app.use(webpackHotMiddleware(webpackCompiler));
 
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+
+app.use(function(req, res) {
+  Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
+    if (err) {
+      res.status(500).send(err.message)
+    } else if (redirectLocation) {
+      res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
+    } else if (renderProps) {
+      const html = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+          </head>
+          
+          <body>
+            <div id="root"></div>
+          </body>
+          
+          <script src="/static/bundle.js"></script>
+        </html>
+      `;
+
+      res.status(200).send(html);
+    } else {
+      res.status(404).send('Page Not Found')
+    }
+  });
 });
 
 app.listen(app.get('port'), 'localhost', (err) => {
