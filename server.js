@@ -1,28 +1,38 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const config = require('./api/config');
 
 const app = express();
 
-let config, compiler;
+let webpackConfig, webpackCompiler;
 
 if (app.get('env') === 'development') {
-  config = require('./webpack.config.dev');
+  webpackConfig = require('./webpack.config.dev');
 } else if (app.get('env') === 'production') {
-  config = require('./webpack.config.prod');
+  webpackConfig = require('./webpack.config.prod');
 }
 
-compiler = webpack(config);
+webpackCompiler = webpack(webpackConfig);
+
+mongoose.connect(config.database);
+mongoose.connection.on('error', function() {
+  console.info('Error: Could not connect to MongoDB.');
+});
 
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(require('webpack-dev-middleware')(compiler, {
+app.use(webpackDevMiddleware(webpackCompiler, {
   noInfo: true,
-  publicPath: config.output.publicPath
+  publicPath: webpackConfig.output.publicPath
 }));
-app.use(require('webpack-hot-middleware')(compiler));
+app.use(webpackHotMiddleware(webpackCompiler));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
