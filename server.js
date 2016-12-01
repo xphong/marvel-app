@@ -53,7 +53,7 @@ app.use(function(req, res) {
         <html>
           <head>
             <title></title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
           </head>
           
           <body>
