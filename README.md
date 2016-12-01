@@ -59,3 +59,4 @@ mongoimport --db marvel --collection powerlevels --type json --file data/powerle
 * Search table
 * REST service
 * Unit tests
+* React server-side rendering
