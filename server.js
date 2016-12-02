@@ -41,23 +41,23 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 app.use(webpackHotMiddleware(webpackCompiler));
 
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
-app.use('/api/v1/characters', function (req, res) {
+app.use('/api/v1/character', function (req, res) {
   const timestamp = new Date().getTime();
   const hash = crypto.createHash('md5').update(timestamp + config.privateKey + config.publicKey).digest('hex');
-  const url = `http://gateway.marvel.com/v1/public/characters?limit=10&nameStartsWith=spider&ts=${timestamp}&apikey=${config.publicKey}&hash=${hash}`;
+  const url = `http://gateway.marvel.com/v1/public/characters?limit=${req.query.limit}&nameStartsWith=${req.query.name}&ts=${timestamp}&apikey=${config.publicKey}&hash=${hash}`;
 
   request.get({
-      url: url,
-      json: true,
-      headers: {'User-Agent': 'request'}
-    }, (err, response, data) => {
-      if (err) {
-        console.log('Error:', err);
-      } else if (response.statusCode !== 200) {
-        console.log('Status:', response.statusCode);
-      } else {
-        res.send(data.data);
-      }
+    url: url,
+    json: true,
+    headers: {'User-Agent': 'request'}
+  }, (err, response, data) => {
+    if (err) {
+      console.log('Error:', err);
+    } else if (response.statusCode !== 200) {
+      console.log('Status:', response.statusCode);
+    } else {
+      res.send(data.data);
+    }
   });
 });
 
