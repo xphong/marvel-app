@@ -40,7 +40,6 @@ app.use(webpackHotMiddleware(webpackCompiler));
 
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
 
-
 app.use(function(req, res) {
   Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
     if (err) {
@@ -48,9 +47,7 @@ app.use(function(req, res) {
     } else if (redirectLocation) {
       res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-      const html = {};
-
-      res.status(200).send(renderFullPage(html));
+      res.status(200).send(renderFullPage());
     } else {
       res.status(404).send('Page Not Found')
     }
