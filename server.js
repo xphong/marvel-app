@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const Router = require('react-router');
+const request = require('request');
+const crypto = require('crypto');
 
 const routes = require('./client/routes');
 const config = require('./server/config');
@@ -39,6 +41,25 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 app.use(webpackHotMiddleware(webpackCompiler));
 
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
+app.use('/api/v1/characters', function (req, res) {
+  const timestamp = new Date().getTime();
+  const hash = crypto.createHash('md5').update(timestamp + config.privateKey + config.publicKey).digest('hex');
+  const url = `http://gateway.marvel.com/v1/public/characters?limit=10&nameStartsWith=spider&ts=${timestamp}&apikey=${config.publicKey}&hash=${hash}`;
+
+  request.get({
+      url: url,
+      json: true,
+      headers: {'User-Agent': 'request'}
+    }, (err, response, data) => {
+      if (err) {
+        console.log('Error:', err);
+      } else if (response.statusCode !== 200) {
+        console.log('Status:', response.statusCode);
+      } else {
+        res.send(data.data);
+      }
+  });
+});
 
 app.use(function(req, res) {
   Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
