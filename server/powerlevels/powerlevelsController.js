@@ -5,7 +5,11 @@ const PowerLevels = require('./PowerLevelsModel');
  * Returns power levels.
  */
 exports.get = (req, res) => {
-  PowerLevels.find({}, (err, powerlevels) => {
-    res.send(powerlevels);  
-  });
+  try {
+    PowerLevels.find({}, (err, powerlevels) => {
+      res.send(powerlevels);  
+    });    
+  } catch (e) {
+    res.status(404).send({ message: e });
+  }
 };
