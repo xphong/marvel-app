@@ -6,7 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const React = require('react');
-const ReactDOM = require('react-dom/server');
+const ReactDOMServer = require('react-dom/server');
 const Router = require('react-router');
 
 const routes = require('./client/routes');
@@ -48,23 +48,9 @@ app.use(function(req, res) {
     } else if (redirectLocation) {
       res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-      const html = `
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title></title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
-          </head>
-          
-          <body>
-            <div id="root"></div>
-          </body>
-          
-          <script src="/static/bundle.js"></script>
-        </html>
-      `;
+      const html = {};
 
-      res.status(200).send(html);
+      res.status(200).send(renderFullPage(html));
     } else {
       res.status(404).send('Page Not Found')
     }
@@ -79,3 +65,23 @@ app.listen(app.get('port'), 'localhost', (err) => {
 
   console.log('Listening on port ' + app.get('port'));
 });
+
+function renderFullPage(html) {
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+      </head>
+      
+      <body>
+        <div id="root">
+          ${html}
+        </div>
+      </body>
+      
+      <script src="/static/bundle.js"></script>
+    </html>
+  `;
+}
