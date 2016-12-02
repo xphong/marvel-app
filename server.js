@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 const React = require('react');
 const ReactDOM = require('react-dom/server');
 const Router = require('react-router');
-const routes = require('./client/routes');
 
+const routes = require('./client/routes');
 const config = require('./server/config');
 
 const app = express();

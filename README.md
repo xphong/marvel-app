@@ -27,7 +27,7 @@ Import power levels data:
 mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 ```
 
-## Toggle React Dev Tools On/Off:
+## Toggle React Dev Tools On/Off
 <kbd>CTRL</kbd> + <kbd>H</kbd>
 
 
