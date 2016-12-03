@@ -22,11 +22,13 @@ exports.get = (req, res) => {
       url: url,
       json: true,
       headers: {'User-Agent': 'request'}
-    }, (err, response, data) => {
-      if (err) {
-        console.log('Error:', err);
+    }, (error, response, data) => {
+      if (error) {
+        console.log('Error:', error);
+        res.send(error);
       } else if (response.statusCode !== 200) {
-        console.log('Status:', response.statusCode);
+        console.log('Error', response.body);
+        res.status(response.statusCode).send(response.body);
       } else {
         res.send(data.data);
       }
