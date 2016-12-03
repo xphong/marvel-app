@@ -10,6 +10,6 @@ exports.get = (req, res) => {
       res.send(powerlevels);  
     });    
   } catch (e) {
-    res.status(404).send({ message: e });
+    res.status(500).send({ message: e });
   }
 };
