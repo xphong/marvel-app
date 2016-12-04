@@ -5,6 +5,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const Router = require('react-router');
@@ -32,6 +33,7 @@ mongoose.connection.on('error', function() {
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan('dev'));
 app.use(webpackDevMiddleware(webpackCompiler, {
   noInfo: true,
   publicPath: webpackConfig.output.publicPath
