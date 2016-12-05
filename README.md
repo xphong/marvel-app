@@ -15,6 +15,8 @@ Import power levels data:
 mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 ```
 
+### Dependencies
+
 Install required dependencies:
 ```
 npm install yarn -g
