@@ -27,6 +27,8 @@ npm install yarn -g
 yarn
 ```
 
+## Scripts
+
 * Run development server (port 3000): `npm run dev`
 
 * Run production server: `npm run prod`
