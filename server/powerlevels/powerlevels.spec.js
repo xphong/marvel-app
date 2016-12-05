@@ -18,7 +18,7 @@ describe('PowerLevels', () => {
 
     it('should return 404 on other endpoints', function(done) {
       request(app)
-        .get('/api/v1/powerlevels/anything')
+        .get('/api/v1/powerlevels/spiderman')
         .end(function(err, res) {
           expect(res.statusCode).to.equal(404);
           done();

@@ -19,7 +19,7 @@ describe('Characters', () => {
 
     it('should return 404 on other endpoints', function(done) {
       request(app)
-        .get('/api/v1/characters/anything')
+        .get('/api/v1/characters/spiderman')
         .end(function(err, res) {
           expect(res.statusCode).to.equal(404);
           done();
