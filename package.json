@@ -10,7 +10,8 @@
     "start": "nodemon server.js --exec babel-node NODE_ENV=development",
     "prod": "cross-env NODE_ENV=production npm run start:prod",
     "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "./node_modules/.bin/mocha server"
   },
   "license": "MIT",
   "devDependencies": {
@@ -53,13 +54,16 @@
   },
   "dependencies": {
     "axios": "0.14.0",
+    "body-parser": "1.14.1",
+    "chai": "3.5.0",
+    "mocha": "3.1.2",
+    "mongoose": "4.2.5",
     "react": "15.3.1",
     "react-dom": "15.3.1",
     "react-redux": "4.1.1",
     "react-router": "3.0.0",
     "react-router-redux": "4.0.6",
     "redux-thunk": "2.1.0",
-    "body-parser": "1.14.1",
-    "mongoose": "4.2.5"
+    "supertest": "2.0.1"
   }
 }
