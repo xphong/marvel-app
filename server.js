@@ -85,3 +85,5 @@ function renderFullPage(html) {
     </html>
   `;
 }
+
+module.exports = app;
