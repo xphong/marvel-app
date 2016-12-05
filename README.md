@@ -20,6 +20,8 @@ Run production server: `npm run prod`
 
 Deploy production build: `npm run build`
 
+Run integration tests: `npm test`
+
 ## Import Mongo Database Collection
 
 Import power levels data:
@@ -45,4 +47,4 @@ mongoimport --db marvel --collection powerlevels --type json --file data/powerle
 
 * Sort table
 * Search table
-* Unit/Integration tests
+* Unit tests
