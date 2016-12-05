@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as types from '../constants/ActionTypes';
-import { LOCAL_ENDPOINT } from '../constants/AppConstants';
+import { ENDPOINT } from '../constants/AppConstants';
 
 function requestPowerLevels() {
   return {
@@ -56,7 +56,7 @@ function sortCharactersByName(data) {
 }
 
 export function fetchPowerLevels() {
-  const url = `${LOCAL_ENDPOINT}powerlevels`;
+  const url = `${ENDPOINT}powerlevels`;
   const opts = {
     url: url,
     timeout: 10000,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import * as types from '../constants/ActionTypes';
-import { MARVEL_ENDPOINT, KEY, CHARACTER_LIMIT } from '../constants/AppConstants';
+import { ENDPOINT, CHARACTER_LIMIT } from '../constants/AppConstants';
 
 function requestCharactersByName() {
   return {
@@ -39,8 +39,7 @@ function createCharacterData(data) {
 }
 
 export function fetchCharactersByName(name) {
-  const timestamp = new Date().getTime();
-  const url = `${MARVEL_ENDPOINT}characters?limit=${CHARACTER_LIMIT}&nameStartsWith=${name}&apikey=${KEY}&ts=${timestamp}`;
+  const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&name=${name}`;
   const opts = {
     url: url,
     timeout: 10000,
@@ -55,7 +54,7 @@ export function fetchCharactersByName(name) {
         let data = [];
 
         if (response.data) {
-          data = response.data.data.results.map(createCharacterData);
+          data = response.data.results.map(createCharacterData);
 
           dispatch(receiveCharacters(data));
         }
