@@ -54,7 +54,6 @@ yarn
 
 * Sort table
 * Search table
-* Unit tests
 
 ## FAQ
 * Toggle React Dev Tools On/Off
