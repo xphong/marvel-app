@@ -35,7 +35,7 @@ yarn
 
 * Run production server: `npm run prod`
 
-* Deploy production build: `npm run build`
+* Deploy production build (Client): `npm run build`
 
 * Run integration tests: `npm test`
 
