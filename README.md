@@ -1,4 +1,5 @@
 # Marvel App
+[![Build Status](https://travis-ci.org/xphong/marvel-app.svg?branch=master)](https://travis-ci.org/xphong/marvel-app)
 
 React + Node + MongoDB + Marvel API
 
