@@ -65,7 +65,14 @@ export function fetchPowerLevels() {
   };
 
   return dispatch => {
+    const powerLevelsSessionData = sessionStorage.getItem('powerlevels-data');
+
     dispatch(requestPowerLevels());
+
+    if (powerLevelsSessionData) {
+      return dispatch(receivePowerLevels(JSON.parse(powerLevelsSessionData)));
+    }
+
     return axios(opts)
       .then(function(response) {
         let powerLevelsData = [];
@@ -74,6 +81,8 @@ export function fetchPowerLevels() {
           powerLevelsData = response.data;
           powerLevelsData.map(createPowerLevelData);
           powerLevelsData = sortCharactersByName(response.data);
+
+          sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
 
           dispatch(receivePowerLevels(powerLevelsData));
         }
