@@ -16,6 +16,15 @@ describe('Characters', () => {
           done();
         });
     });
+
+    it('should return 404 on other endpoints', function(done) {
+      request(app)
+        .get('/api/v1/characters/anything')
+        .end(function(err, res) {
+          expect(res.statusCode).to.equal(404);
+          done();
+        });
+    });
   });
 
 });
