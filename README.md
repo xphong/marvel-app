@@ -50,13 +50,11 @@ yarn
 * Axios
 * Mocha, Chai, Supertest
 
-### TODO:
-
-* Sort table
-* Search table
-
 ## FAQ
 * Toggle React Dev Tools On/Off
 <kbd>CTRL</kbd> + <kbd>H</kbd>
 
+## TODO:
 
+* Sort table
+* Search table
