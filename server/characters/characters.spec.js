@@ -25,6 +25,15 @@ describe('Characters', () => {
           done();
         });
     });
+
+    it('should return 409 when query strings are missing', function(done) {
+      request(app)
+        .get('/api/v1/characters')
+        .end(function(err, res) {
+          expect(res.statusCode).to.equal(409);
+          done();
+        });
+    });
   });
 
 });
