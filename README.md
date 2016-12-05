@@ -15,6 +15,10 @@ Import power levels data:
 mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 ```
 
+### Add Marvel API Public/Private Keys
+
+Add your keys to `server/config.example.js` then rename to `config.js`
+
 ### Dependencies
 
 Install required dependencies:
