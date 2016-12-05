@@ -10,34 +10,30 @@ React + Node + MongoDB + Marvel API
 
 ### Import Mongo Database Collection
 
-Import power levels data:
+* Import power levels data:
 ```
 mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 ```
 
 ### Add Marvel API Public/Private Keys
 
-Add your keys to `server/config.example.js` then rename to `config.js`
+* Add your keys to `server/config.example.js` then rename to `config.js`
 
 ### Dependencies
 
-Install required dependencies:
+* Install required dependencies:
 ```
 npm install yarn -g
 yarn
 ```
 
-Run development server (port 3000): `npm run dev`
+* Run development server (port 3000): `npm run dev`
 
-Run production server: `npm run prod`
+* Run production server: `npm run prod`
 
-Deploy production build: `npm run build`
+* Deploy production build: `npm run build`
 
-Run integration tests: `npm test`
-
-## Toggle React Dev Tools On/Off
-<kbd>CTRL</kbd> + <kbd>H</kbd>
-
+* Run integration tests: `npm test`
 
 ## Technologies
 
@@ -48,9 +44,16 @@ Run integration tests: `npm test`
 * Semantic UI
 * Webpack
 * Axios
+* Mocha, Chai, Supertest
 
 ### TODO:
 
 * Sort table
 * Search table
 * Unit tests
+
+## FAQ
+* Toggle React Dev Tools On/Off
+<kbd>CTRL</kbd> + <kbd>H</kbd>
+
+
