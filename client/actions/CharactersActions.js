@@ -39,7 +39,7 @@ function createCharacterData(data) {
 }
 
 export function fetchCharactersByName(name) {
-  const url = `${ENDPOINT}characters?limit=${CHARACTER_LIMIT}&name=${name}`;
+  const url = `${ENDPOINT}/characters?limit=${CHARACTER_LIMIT}&name=${name}`;
   const opts = {
     url: url,
     timeout: 10000,

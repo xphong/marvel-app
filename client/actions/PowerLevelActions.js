@@ -56,7 +56,7 @@ function sortCharactersByName(data) {
 }
 
 export function fetchPowerLevels() {
-  const url = `${ENDPOINT}powerlevels`;
+  const url = `${ENDPOINT}/powerlevels`;
   const opts = {
     url: url,
     timeout: 10000,
