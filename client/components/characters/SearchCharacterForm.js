@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { browserHistory } from 'react-router';
 
 export default class SearchCharacterForm extends Component {
   constructor(props, context) {
@@ -17,6 +18,8 @@ export default class SearchCharacterForm extends Component {
     event.preventDefault();
 
     this.props.actions.fetchCharactersByName(this.state.characterName);
+    browserHistory.push(`/characters/${this.state.characterName}`);
+
     this.resetForm();
   }
 
