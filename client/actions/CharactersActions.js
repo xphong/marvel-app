@@ -10,7 +10,7 @@ function requestCharactersByName() {
 }
 
 function receiveCharacters(data) {
-  return{
+  return {
     type: types.RECEIVE_CHARACTERS,
     payload: {
       data

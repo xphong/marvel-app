@@ -13,6 +13,7 @@ const routes = (
     <Route path='about' component={About} />
     <Route path='powerlevels' component={PowerLevels} />
     <Route path='powerlevels/:id' component={CharacterPowerLevel} />
+    <Route path='characters/:name' component={Characters} />
   </Route>
 );
 

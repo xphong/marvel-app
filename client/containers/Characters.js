@@ -8,6 +8,12 @@ import SearchCharacterForm from '../components/characters/SearchCharacterForm';
 import CharactersList from '../components/characters/CharactersList';
 
 class Characters extends Component {
+  componentDidMount() {
+    if (this.props.params.name && this.props.params.name !== '') {
+      this.props.actions.fetchCharactersByName(this.props.params.name);
+    }
+  }
+
   render() {
     const {characters, actions} = this.props;
     
