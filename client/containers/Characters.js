@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -16,7 +17,7 @@ class Characters extends Component {
 
   render() {
     const {characters, actions} = this.props;
-    
+
     return (
       <div>
         <SearchCharacterForm actions={actions} />

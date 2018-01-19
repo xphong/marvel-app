@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import { Radar as RadarChart } from 'react-chartjs';
+import { Radar as RadarChart } from 'react-chartjs-2';
 
 export default class CharacterPowerLevelRadarChart extends Component {
   constructor(props){
@@ -11,7 +12,17 @@ export default class CharacterPowerLevelRadarChart extends Component {
     const {characterChartData} = this.props;
 
     return (
-      <RadarChart className='chart' data={characterChartData} width='350' height='350'/>
+      <div>
+        <RadarChart
+          className='chart'
+          data={characterChartData}
+          width={350}
+          height={350}
+          options={{
+            maintainAspectRatio: false
+          }}
+        />
+      </div>
     );
   }
 }

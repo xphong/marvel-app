@@ -74,13 +74,13 @@ function renderFullPage(html) {
         <title>Marvel App - Phong Huynh</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
       </head>
-      
+
       <body>
         <div id="root">
           ${html}
         </div>
       </body>
-      
+
       <script src="/static/bundle.js"></script>
     </html>
   `;
