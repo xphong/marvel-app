@@ -6,7 +6,7 @@ React + Node + MongoDB + Marvel API
 * Searches the Marvel database for the characters using the [Marvel API](https://developer.marvel.com/)
 * Show power levels of popular Marvel characters
 * Built with [https://github.com/xphong/simple-react-redux-starter](https://github.com/xphong/simple-react-redux-starter)
-* [Data provided by Marvel. © 2016 Marvel](http://marvel.com)
+* [Data provided by Marvel. © 2018 Marvel](http://marvel.com)
 
 ## Getting Started
 
@@ -59,3 +59,4 @@ yarn
 
 * Sort table
 * Search table
+* Upgrade to React Router v4 🤔
