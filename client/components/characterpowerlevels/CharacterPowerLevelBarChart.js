@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import { Bar as BarChart } from 'react-chartjs';
+import { Bar as BarChart } from 'react-chartjs-2';
 
 export default class CharacterPowerLevelBarChart extends Component {
   constructor(props){
@@ -11,7 +12,17 @@ export default class CharacterPowerLevelBarChart extends Component {
     const {characterChartData} = this.props;
 
     return (
-      <BarChart className='chart' data={characterChartData} width='350' height='350'/>
+      <div>
+        <BarChart
+          className='chart'
+          data={characterChartData}
+          width={350}
+          height={350}
+          options={{
+            maintainAspectRatio: false
+          }}
+        />
+      </div>
     );
   }
 }
