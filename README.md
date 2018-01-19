@@ -38,7 +38,7 @@ yarn
 
 * Deploy production build (Client): `npm run build`
 
-* Run integration tests: `npm test`
+* Run integration tests: `npm run test:backend`
 
 ## Technologies
 

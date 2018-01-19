@@ -11,7 +11,7 @@
     "prod": "cross-env NODE_ENV=production npm run start:prod",
     "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
     "lint": "eslint src",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**"
+    "test:backend": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**"
   },
   "license": "MIT",
   "devDependencies": {
