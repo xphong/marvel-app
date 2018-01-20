@@ -1,8 +1,19 @@
 module.exports = {
-  roots: ['.'],
-  setupFiles: ['./setupTests.js'],
+  rootDir: '../',
+  roots: ['<rootDir>'],
+  setupFiles: ['<rootDir>/__tests__/setupTests.js'],
   testPathIgnorePatterns: [
-    './setupTests.js',
-    './jest.config.js'
+    '<rootDir>/__tests__/setupTests.js',
+    '<rootDir>/__tests__/jest.config.js',
+    '<rootDir>/__tests__/coverage'
+  ],
+  coveragePathIgnorePatterns: [
+    '/__tests__/',
+    '/store/',
+    '/constants/'
+  ],
+  coverageDirectory: '<rootDir>/__tests__/coverage',
+  collectCoverageFrom: [
+    '**/*.js'
   ]
 };
