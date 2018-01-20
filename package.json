@@ -12,14 +12,9 @@
     "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
     "lint": "eslint src",
     "test:backend": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
-  },
-  "jest": {
-    "roots": ["./client"],
-    "setupFiles": ["./client/__tests__/setupTests.js"],
-    "testPathIgnorePatterns": ["./client/__tests__/setupTests.js"]
+    "test": "jest --config ./client/__tests__/jest.config.js",
+    "test:watch": "jest --watch --config ./client/__tests__/jest.config.js",
+    "test:coverage": "jest --coverage --config ./client/__tests__/jest.config.js"
   },
   "license": "MIT",
   "devDependencies": {
