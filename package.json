@@ -12,9 +12,9 @@
     "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
     "lint": "eslint src",
     "test:backend": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "jest ./client",
+    "test:watch": "jest ./client --watch",
+    "test:coverage": "jest ./client --coverage"
   },
   "jest": {
     "setupFiles": ["./client/__tests__/setupTests.js"]
