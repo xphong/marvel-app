@@ -1,5 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../containers/App';
+
 describe('App', () => {
-    it('should be able to quick maths', () => {
-        expect(2 + 2 - 1).toEqual(3);
-    });
+  it('should render App', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+  });
 });
