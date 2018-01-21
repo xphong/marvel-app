@@ -17,7 +17,7 @@ export const charactersAPIMock = {
   ]
 };
 
-export const charactersMock = [
+export const charactersDataMock = [
   {
     description: 'Flash Thompson was the high school bully of Peter Parker',
     image: 'http://i.annihil.us/u/prod/marvel/i/mg/7/80/5269668c7d5df.jpg',
