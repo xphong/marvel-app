@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Characters should render Characters 1`] = `
+exports[`Characters Container should render Characters 1`] = `
 <div>
   <SearchCharacterForm
     actions={
@@ -19,7 +19,7 @@ exports[`Characters should render Characters 1`] = `
 </div>
 `;
 
-exports[`Characters should render Characters with loading spinner 1`] = `
+exports[`Characters Container should render Characters with loading spinner 1`] = `
 <div>
   <SearchCharacterForm
     actions={

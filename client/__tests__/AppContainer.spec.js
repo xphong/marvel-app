@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from '../containers/App';
 
-describe('App', () => {
+describe('App Container', () => {
   it('should render App', () => {
     const wrapper = shallow(
       <App />

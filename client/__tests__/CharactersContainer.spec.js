@@ -24,7 +24,7 @@ function setup({ isLoading = false, name = '' } = {}) {
   };
 }
 
-describe('Characters', () => {
+describe('Characters Container', () => {
   it('should render Characters', () => {
     const { wrapper } = setup();
     expect(wrapper).toMatchSnapshot();
@@ -36,5 +36,13 @@ describe('Characters', () => {
     });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call fetchCharactersByName', () => {
+    const { wrapper, props } = setup({
+      name: 'Wolverine'
+    });
+
+    expect(props.actions.fetchCharactersByName).toHaveBeenCalled();
   });
 });
