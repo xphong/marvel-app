@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters Reducer should handle RECEIVE_CHARACTERS 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "name": "Spider-man",
+    },
+  ],
+  "error": false,
+  "isFetched": true,
+  "isLoading": false,
+}
+`;
+
+exports[`Characters Reducer should handle RECEIVE_CHARACTERS_ERROR 1`] = `
+Object {
+  "data": Array [],
+  "error": true,
+  "isFetched": false,
+  "isLoading": false,
+}
+`;
+
+exports[`Characters Reducer should handle REQUEST_CHARACTERS_BY_NAME 1`] = `
+Object {
+  "data": Array [],
+  "error": false,
+  "isFetched": false,
+  "isLoading": true,
+}
+`;
+
+exports[`Characters Reducer should return initial state 1`] = `
+Object {
+  "data": Array [],
+  "error": false,
+  "isFetched": false,
+  "isLoading": false,
+}
+`;

@@ -50,6 +50,7 @@ yarn
 * Webpack
 * Axios
 * Mocha, Chai, Supertest
+* Jest, Enzyme
 
 ## FAQ
 * Toggle React Dev Tools On/Off

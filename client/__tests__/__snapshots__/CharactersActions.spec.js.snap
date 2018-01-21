@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters Actions: fetchCharactersByName should get characters by name 1`] = `
+Array [
+  Object {
+    "type": "@@marvel/REQUEST_CHARACTERS_BY_NAME",
+  },
+  Object {
+    "payload": Object {
+      "data": Array [
+        Object {
+          "description": "Flash Thompson was the high school bully of Peter Parker",
+          "image": "http://i.annihil.us/u/prod/marvel/i/mg/7/80/5269668c7d5df.jpg",
+          "name": "Venom",
+          "url": "http://marvel.com/comics/characters/1009663/venom_flash_thompson",
+        },
+      ],
+    },
+    "type": "@@marvel/RECEIVE_CHARACTERS",
+  },
+]
+`;

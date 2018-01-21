@@ -9,4 +9,5 @@ services: mongodb
 before_script:
   - mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 script:
+  - npm run test
   - npm run test:backend

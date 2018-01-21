@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters Container should render Characters 1`] = `
+<div>
+  <SearchCharacterForm
+    actions={
+      Object {
+        "fetchCharactersByName": [MockFunction],
+      }
+    }
+  />
+  <CharactersList
+    characters={
+      Object {
+        "isLoading": false,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Characters Container should render Characters with loading spinner 1`] = `
+<div>
+  <SearchCharacterForm
+    actions={
+      Object {
+        "fetchCharactersByName": [MockFunction],
+      }
+    }
+  />
+  <Spinner />
+</div>
+`;

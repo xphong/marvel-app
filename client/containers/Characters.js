@@ -8,7 +8,7 @@ import Spinner from '../components/ui/Spinner';
 import SearchCharacterForm from '../components/characters/SearchCharacterForm';
 import CharactersList from '../components/characters/CharactersList';
 
-class Characters extends Component {
+export class Characters extends Component {
   componentDidMount() {
     if (this.props.params.name && this.props.params.name !== '') {
       this.props.actions.fetchCharactersByName(this.props.params.name);
