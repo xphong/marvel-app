@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Component should render Nav 1`] = `
+<div
+  className="ui fixed menu"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="header item"
+    >
+      Marvel App
+    </div>
+    <IndexLink
+      activeClassName="route--active"
+      className="item"
+      to="/"
+    >
+      Home
+    </IndexLink>
+    <Link
+      activeClassName="route--active"
+      className="item"
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/powerlevels"
+    >
+      Power Levels
+    </Link>
+    <Link
+      activeClassName="route--active"
+      className="item"
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/about"
+    >
+      About
+    </Link>
+  </div>
+</div>
+`;
