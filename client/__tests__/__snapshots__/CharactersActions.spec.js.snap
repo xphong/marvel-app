@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Characters Actions: fetchCharactersByName should get characters by name 1`] = `
+exports[`Characters Actions: fetchCharactersByName should get characters by name snapshot 1`] = `
 Array [
   Object {
     "type": "@@marvel/REQUEST_CHARACTERS_BY_NAME",
