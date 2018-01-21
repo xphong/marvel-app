@@ -5,12 +5,14 @@ module.exports = {
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/setupTests.js',
     '<rootDir>/__tests__/jest.config.js',
-    '<rootDir>/__tests__/coverage'
+    '<rootDir>/__tests__/coverage',
+    '<rootDir>/__tests__/mocks'
   ],
   coveragePathIgnorePatterns: [
     '/__tests__/',
     '/store/',
-    '/constants/'
+    '/constants/',
+    '/mocks/'
   ],
   coverageDirectory: '<rootDir>/__tests__/coverage',
   collectCoverageFrom: [
