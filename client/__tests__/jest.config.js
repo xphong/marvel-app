@@ -15,5 +15,6 @@ module.exports = {
   coverageDirectory: '<rootDir>/__tests__/coverage',
   collectCoverageFrom: [
     '**/*.js'
-  ]
+  ],
+  snapshotSerializers: ['enzyme-to-json/serializer']
 };

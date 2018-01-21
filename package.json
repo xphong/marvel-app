@@ -14,7 +14,8 @@
     "test:backend": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**",
     "test": "jest --config ./client/__tests__/jest.config.js",
     "test:watch": "jest --watch --config ./client/__tests__/jest.config.js",
-    "test:coverage": "jest --coverage --config ./client/__tests__/jest.config.js"
+    "test:coverage": "jest --coverage --config ./client/__tests__/jest.config.js",
+    "test:update": "jest --config ./client/__tests__/jest.config.js --updateSnapshot"
   },
   "license": "MIT",
   "devDependencies": {
@@ -32,6 +33,7 @@
     "css-loader": "0.24.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.0",
     "eslint": "3.4.0",
     "eslint-config-airbnb": "10.0.1",
     "eslint-plugin-babel": "3.0.0",
