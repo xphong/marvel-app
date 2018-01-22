@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchCharacterForm Component should perform a search 1`] = `
+<div
+  className="search-character__form"
+>
+  <form
+    onChange={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui action input"
+    >
+      <input
+        name="characterName"
+        placeholder="Character Name"
+        required={true}
+        type="text"
+      />
+      <button
+        className="ui icon pink button"
+      >
+        <i
+          className="search icon"
+        />
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`SearchCharacterForm Component should render SearchCharacterForm 1`] = `
+<div
+  className="search-character__form"
+>
+  <form
+    onChange={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui action input"
+    >
+      <input
+        name="characterName"
+        placeholder="Character Name"
+        required={true}
+        type="text"
+      />
+      <button
+        className="ui icon pink button"
+      >
+        <i
+          className="search icon"
+        />
+      </button>
+    </div>
+  </form>
+</div>
+`;

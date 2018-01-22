@@ -39,10 +39,12 @@ describe('Characters Container', () => {
   });
 
   it('should call fetchCharactersByName', () => {
+    const name = 'Wolverine';
+
     const { wrapper, props } = setup({
-      name: 'Wolverine'
+      name
     });
 
-    expect(props.actions.fetchCharactersByName).toHaveBeenCalled();
+    expect(props.actions.fetchCharactersByName).toHaveBeenCalledWith(name);
   });
 });
