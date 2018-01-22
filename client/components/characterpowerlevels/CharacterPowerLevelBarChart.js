@@ -19,7 +19,10 @@ export default class CharacterPowerLevelBarChart extends Component {
           width={350}
           height={350}
           options={{
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            }
           }}
         />
       </div>

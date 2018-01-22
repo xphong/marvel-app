@@ -19,7 +19,16 @@ export default class CharacterPowerLevelRadarChart extends Component {
           width={350}
           height={350}
           options={{
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            scale: {
+               ticks: {
+                  maxTicksLimit: 3,
+                  display: false
+               }
+            }
           }}
         />
       </div>
