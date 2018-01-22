@@ -1,5 +1,5 @@
 import * as types from '../constants/ActionTypes';
-import powerlevelsReducer from '../reducers/powerlevels';
+import powerlevelsReducer from '../reducers/powerLevels';
 
 describe('Power Levels Reducer', () => {
   it('should return initial state', () => {
