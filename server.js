@@ -66,7 +66,7 @@ app.listen(app.get('port'), 'localhost', (err) => {
   console.log('Listening on port ' + app.get('port'));
 });
 
-function renderFullPage(html) {
+function renderFullPage() {
   return `
     <!DOCTYPE html>
     <html>
@@ -77,7 +77,7 @@ function renderFullPage(html) {
 
       <body>
         <div id="root">
-          ${html}
+          Loading...
         </div>
       </body>
 
