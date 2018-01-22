@@ -12,7 +12,10 @@ module.exports = {
     '/__tests__/',
     '/store/',
     '/constants/',
-    '/mocks/'
+    '/mocks/',
+    'index.js',
+    'DevTools.js',
+    'routes.js'
   ],
   coverageDirectory: '<rootDir>/__tests__/coverage',
   collectCoverageFrom: [
