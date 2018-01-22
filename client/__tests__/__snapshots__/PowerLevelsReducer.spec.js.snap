@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Power Levels Reducer should handle RECEIVE_POWERLEVELS 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "name": "Spider-man",
+    },
+  ],
+  "error": false,
+  "isLoading": false,
+}
+`;
+
+exports[`Power Levels Reducer should handle RECEIVE_POWERLEVELS_ERROR 1`] = `
+Object {
+  "data": Array [],
+  "error": true,
+  "isLoading": false,
+}
+`;
+
+exports[`Power Levels Reducer should handle REQUEST_POWERLEVELS 1`] = `
+Object {
+  "data": Array [],
+  "error": false,
+  "isLoading": true,
+}
+`;
+
+exports[`Power Levels Reducer should return initial state 1`] = `
+Object {
+  "data": Array [],
+  "error": false,
+  "isLoading": false,
+}
+`;
