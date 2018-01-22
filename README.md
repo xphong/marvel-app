@@ -3,6 +3,8 @@
 
 React + Node + MongoDB + Marvel API
 
+![](https://i.imgur.com/tRTEFr7.gif)
+
 * Searches the Marvel database for the characters using the [Marvel API](https://developer.marvel.com/)
 * Show power levels of popular Marvel characters
 * Built with [https://github.com/xphong/simple-react-redux-starter](https://github.com/xphong/simple-react-redux-starter)
