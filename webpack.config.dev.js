@@ -15,22 +15,26 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?/,
         exclude: [/node_modules/, /styles/],
-        loaders: ['babel'],
+        loader: 'babel-loader',
         include: path.join(__dirname, 'client')
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   }
