@@ -45,7 +45,7 @@ export default class SearchCharacterForm extends Component {
                    type='text'
                    required
                    />
-a
+
               <button className='ui icon pink button'>
                   <i className='search icon'></i>
               </button>
