@@ -6,6 +6,8 @@ export default class SearchCharacterForm extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {characterName: null};
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
@@ -33,8 +35,8 @@ export default class SearchCharacterForm extends Component {
     return (
       <div className='search-character__form'>
         <form ref='searchCharacterForm'
-              onSubmit={this.handleSearch.bind(this)}
-              onChange={this.handleInputChange.bind(this)}>
+              onSubmit={this.handleSearch}
+              onChange={this.handleInputChange}>
 
           <div className='ui action input'>
             <input ref='characterName'
@@ -43,7 +45,7 @@ export default class SearchCharacterForm extends Component {
                    type='text'
                    required
                    />
-
+a
               <button className='ui icon pink button'>
                   <i className='search icon'></i>
               </button>
