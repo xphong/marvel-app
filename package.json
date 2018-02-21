@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "axios": "0.14.0",
-    "babel-cli": "6.18.0",
-    "babel-core": "6.3.15",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
     "babel-eslint": "6.1.2",
     "babel-jest": "22.1.0",
     "babel-loader": "6.2.0",
