@@ -57,7 +57,7 @@ app.use(function(req, res) {
   });
 });
 
-app.listen(app.get('port'), 'localhost', (err) => {
+app.listen(app.get('port'), (err) => {
   if (err) {
     console.log(err);
     return;
