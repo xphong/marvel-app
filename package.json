@@ -20,8 +20,6 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "6.3.1",
-    "babel-cli": "6.18.0",
-    "babel-core": "6.3.15",
     "babel-eslint": "6.1.2",
     "babel-jest": "22.1.0",
     "babel-loader": "6.2.0",
@@ -56,6 +54,8 @@
   },
   "dependencies": {
     "axios": "0.14.0",
+    "babel-cli": "6.18.0",
+    "babel-core": "6.3.15",
     "body-parser": "1.14.1",
     "chai": "3.5.0",
     "cross-env": "2.0.1",
