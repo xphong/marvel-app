@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development npm start",
     "start": "nodemon server.js --exec babel-node NODE_ENV=development",
     "prod": "cross-env NODE_ENV=production npm run start:prod",
-    "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
+    "start:prod": "node server.js --exec babel-node NODE_ENV=production",
     "lint": "eslint src",
     "test:backend": "./node_modules/.bin/mocha --compilers js:babel-core/register server/**",
     "test": "jest --config ./client/__tests__/jest.config.js",
