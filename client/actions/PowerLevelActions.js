@@ -77,7 +77,7 @@ export function fetchPowerLevels() {
       .then(function(response) {
         let powerLevelsData = [];
 
-        if (response.data) {
+        if (response.data && response.data.length) {
           powerLevelsData = response.data;
           powerLevelsData.map(createPowerLevelData);
           powerLevelsData = sortCharactersByName(response.data);
@@ -85,10 +85,12 @@ export function fetchPowerLevels() {
           sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
 
           dispatch(receivePowerLevels(powerLevelsData));
+        } else {
+          dispatch(receivePowerLevelsError(response.data));
         }
       })
       .catch(function(response){
-        dispatch(receiveError(response.data));
+        dispatch(receivePowerLevelsError(response.data));
       });
   };
 }
