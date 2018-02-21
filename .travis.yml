@@ -2,12 +2,16 @@ language: node_js
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 node_js:
   - "6"
 services: mongodb
 before_script:
-  - mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
+- mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 script:
-  - npm run test
-  - npm run test:backend
+- npm run test
+- npm run test:backend
+deploy:
+  api_key:
+    secure: Q68PLPUgifeVweTpcwBkEY1W1Lrg6BziRCxffg4ZPdYOjaw8Jmn1eJvmb78p0cs1lHUZ8ptMs2lYLYyew0q57PdmkhWOWM8MDdzAv2F6xvcOiEgWUd4jw5nS8606xIwvr+8pghoJKzj2AjFoTSOAQkR8cXs6LaSDk751XG5pVKQ3sd//8cEapt1Jfd9jRcmvywmPKHM/KoRSMj8fl+WqQTkXeB1ALwBTeb/o1lt8qi0ynO7m5BcPOQMZrqMandPaneK0AaRfJwGob5/GKev7dnjjcVSk+3Glb+Iz/RdSn3xVCp2puglU4r+Qr7pK5BX+JbxPVwWq50myA5VpReazSs1Yy9xaExb60bjYW4muAupPSy8tXAfDVrj0SVerd/XkkYubRIkJCgg907wEloyK3Zwk8NTD4FvkB4D5s0qyQK3aU0J+k46zXLQuc4hvrJ4hNpqlRS3WwA9VySE0fXAyyfDEJK41G3h/aXjL10a8aC3I7EyzW3TBBuJQhy+ehok0C0VlipTVJ7PrlMNx896XREu1yktUVDGsyKx+jyntPC2ODdaqnhRgBB1IvwOhb0X+15GuqgWJJ4HW4A6lcUqD/rEwMjqvpfVmr0n351uHoM4zobOgi8NrHnVqALeRa6hYHE76XuFhVM95f3XiEOjRbOMkQHW0lDkm6VkBxqGG3Ik=
+    app: marvel-app9000
