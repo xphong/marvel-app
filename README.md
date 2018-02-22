@@ -1,5 +1,6 @@
 # Marvel App - https://marvel-app9000.herokuapp.com/
 [![Build Status](https://travis-ci.org/xphong/marvel-app.svg?branch=master)](https://travis-ci.org/xphong/marvel-app)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9ac151446159152a64a6/maintainability)](https://codeclimate.com/github/xphong/marvel-app/maintainability)
 
 React + Node + MongoDB + Marvel API
 
