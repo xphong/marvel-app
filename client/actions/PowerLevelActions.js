@@ -27,11 +27,6 @@ function receivePowerLevelsError(data) {
   };
 }
 
-function createPowerLevelData(powerlevel) {
-  powerlevel.AveragePowerLevel = calculatePowerLevel(powerlevel);
-  return powerlevel;
-}
-
 function calculatePowerLevel(character) {
   const numberOfSkills = 6;
 
@@ -41,6 +36,11 @@ function calculatePowerLevel(character) {
     + parseInt(character.Durability)
     + parseInt(character.Energy_Projection)
     + parseInt(character.Fighting_Ability)) / numberOfSkills).toFixed(2);
+}
+
+function createPowerLevelData(powerlevel) {
+  powerlevel.AveragePowerLevel = calculatePowerLevel(powerlevel);
+  return powerlevel;
 }
 
 function sortCharactersByName(data) {
@@ -56,41 +56,34 @@ function sortCharactersByName(data) {
 }
 
 export function fetchPowerLevels() {
-  const url = `${ENDPOINT}/powerlevels`;
   const opts = {
-    url: url,
+    url: `${ENDPOINT}/powerlevels`,
     timeout: 10000,
     method: 'get',
     responseType: 'json'
   };
 
   return dispatch => {
-    const powerLevelsSessionData = sessionStorage.getItem('powerlevels-data');
-
     dispatch(requestPowerLevels());
+
+    const powerLevelsSessionData = sessionStorage.getItem('powerlevels-data');
 
     if (powerLevelsSessionData) {
       return dispatch(receivePowerLevels(JSON.parse(powerLevelsSessionData)));
     }
 
     return axios(opts)
-      .then(function(response) {
-        let powerLevelsData = [];
-
+      .then(response => {
         if (response.data && response.data.length) {
-          powerLevelsData = response.data;
+          let powerLevelsData = response.data;
           powerLevelsData.map(createPowerLevelData);
           powerLevelsData = sortCharactersByName(response.data);
 
           sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
 
-          dispatch(receivePowerLevels(powerLevelsData));
-        } else {
-          dispatch(receivePowerLevelsError(response.data));
+          return dispatch(receivePowerLevels(powerLevelsData));
         }
       })
-      .catch(function(response){
-        dispatch(receivePowerLevelsError(response.data));
-      });
+      .catch(response => dispatch(receivePowerLevelsError(response.data)));
   };
 }

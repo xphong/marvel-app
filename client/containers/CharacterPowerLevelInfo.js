@@ -13,15 +13,8 @@ export default class CharacterPowerLevelInfo extends Component {
   getCharacterChartData(character) {
     const labels = ['Intelligence', 'Strength', 'Speed', 'Durability', 'Energy Projection', 'Fighting Ability'];
     const label = 'Character Data Set';
-    const backgroundColor = [
-      '#FF6384',
-      '#4BC0C0',
-      '#FFCE56',
-      '#E7E9ED',
-      '#36A2EB'
-    ];
-    let characterChartData = {};
-    let data = [];
+    const backgroundColor = ['#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'];
+    const data = [];
 
     data.push(character.Intelligence);
     data.push(character.Strength);
@@ -30,7 +23,7 @@ export default class CharacterPowerLevelInfo extends Component {
     data.push(character.Energy_Projection);
     data.push(character.Fighting_Ability);
 
-    characterChartData = {
+    const characterChartData = {
       labels,
       datasets: [
         {
