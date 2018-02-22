@@ -46,7 +46,6 @@ yarn
 
 ## Technologies
 
-* ES6
 * React w/ Redux, React Router, Dev Tools
 * Node w/ Express
 * MongoDB w/ Mongoose
@@ -55,6 +54,7 @@ yarn
 * Axios
 * Mocha, Chai, Supertest
 * Jest, Enzyme
+* CI/CD with Travis CI and Heroku
 
 ## FAQ
 * Toggle React Dev Tools On/Off
