@@ -7,7 +7,7 @@ import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import CharacterPowerLevelInfo from './CharacterPowerLevelInfo';
 
-class CharacterPowerLevel extends Component {
+export class CharacterPowerLevel extends Component {
   componentDidMount() {
     if (!this.props.powerLevels.data.length) {
       this.props.actions.fetchPowerLevels();

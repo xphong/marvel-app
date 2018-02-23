@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPowerLevel Container should render CharacterPowerLevel 1`] = `
+<div>
+  <CharacterPowerLevelInfo
+    id={1}
+    powerLevels={
+      Object {
+        "data": Array [],
+        "isLoading": false,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`CharacterPowerLevel Container should render CharacterPowerLevel with loading spinner 1`] = `
+<div>
+  <Spinner />
+</div>
+`;

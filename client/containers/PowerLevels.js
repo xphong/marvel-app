@@ -7,14 +7,14 @@ import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import PowerLevelList from '../components/powerlevels/PowerLevelList';
 
-class PowerLevels extends Component {
+export class PowerLevels extends Component {
   componentDidMount() {
     this.props.actions.fetchPowerLevels();
   }
 
   render() {
-    const {powerLevels, actions} = this.props;    
-    
+    const {powerLevels, actions} = this.props;
+
     return (
       <div className='fadeIn-page-animation'>
         {powerLevels.isLoading ? <Spinner /> : <PowerLevelList powerLevels={powerLevels} actions={actions} />}

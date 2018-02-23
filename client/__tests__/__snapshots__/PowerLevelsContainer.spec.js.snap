@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PowerLevels Container should render PowerLevels 1`] = `
+<div
+  className="fadeIn-page-animation"
+>
+  <PowerLevelList
+    actions={
+      Object {
+        "fetchPowerLevels": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+        },
+      }
+    }
+    powerLevels={
+      Object {
+        "isLoading": false,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`PowerLevels Container should render PowerLevels with loading spinner 1`] = `
+<div
+  className="fadeIn-page-animation"
+>
+  <Spinner />
+</div>
+`;
