@@ -10,6 +10,7 @@ describe('Characters', () => {
       request(app)
         .get('/api/v1/characters?name=a&limit=12')
         .end(function(err, res) {
+          if (err) return done(err);
           expect(res.statusCode).to.equal(200);
           expect(res.body.limit).to.equal(12);
           expect(res.body.results).to.have.length.above(0);
@@ -21,6 +22,7 @@ describe('Characters', () => {
       request(app)
         .get('/api/v1/characters/spiderman')
         .end(function(err, res) {
+          if (err) return done(err);
           expect(res.statusCode).to.equal(404);
           done();
         });
@@ -30,6 +32,7 @@ describe('Characters', () => {
       request(app)
         .get('/api/v1/characters')
         .end(function(err, res) {
+          if (err) return done(err);
           expect(res.statusCode).to.equal(409);
           done();
         });

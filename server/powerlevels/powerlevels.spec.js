@@ -10,6 +10,7 @@ describe('PowerLevels', () => {
       request(app)
         .get('/api/v1/powerlevels')
         .end(function(err, res) {
+          if (err) return done(err);
           expect(res.statusCode).to.equal(200);
           expect(res.body).to.have.length.above(0);
           done();
@@ -20,6 +21,7 @@ describe('PowerLevels', () => {
       request(app)
         .get('/api/v1/powerlevels/spiderman')
         .end(function(err, res) {
+          if (err) return done(err);
           expect(res.statusCode).to.equal(404);
           done();
         });
