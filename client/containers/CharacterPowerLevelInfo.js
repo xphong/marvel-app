@@ -42,9 +42,7 @@ export default class CharacterPowerLevelInfo extends Component {
     const {id} = this.props;
     const character = data[id];
 
-    if (!character) {
-      return null;
-    }
+    if (!character) return null;
 
     const characterChartData = this.getCharacterChartData(character);
 

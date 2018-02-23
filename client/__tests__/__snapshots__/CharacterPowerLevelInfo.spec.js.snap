@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPowerLevelInfo Container should render CharacterPowerLevelInfo 1`] = `
+<div
+  className="ui container center aligned"
+>
+  <CharacterPowerLevelInfoDisplay
+    character={
+      Object {
+        "Durability": "3",
+        "Energy_Projection": "6",
+        "Fighting_Ability": "3",
+        "Image_Link": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/53176aa9df48d.jpg",
+        "Intelligence": "6",
+        "Name": "Ant-Man (Hank Pym)",
+        "Profile_Link": "http://marvel.wikia.com/Henry_Pym_(Earth-616)",
+        "Speed": "3",
+        "Strength": "7",
+      }
+    }
+  />
+  <div
+    className="chart-area"
+  >
+    <CharacterPowerLevelRadarChart
+      characterChartData={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": Array [
+                "#FF6384",
+                "#4BC0C0",
+                "#FFCE56",
+                "#E7E9ED",
+                "#36A2EB",
+              ],
+              "data": Array [
+                "6",
+                "7",
+                "3",
+                "3",
+                "6",
+                "3",
+              ],
+              "label": "Character Data Set",
+            },
+          ],
+          "labels": Array [
+            "Intelligence",
+            "Strength",
+            "Speed",
+            "Durability",
+            "Energy Projection",
+            "Fighting Ability",
+          ],
+        }
+      }
+    />
+    <CharacterPowerLevelBarChart
+      characterChartData={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": Array [
+                "#FF6384",
+                "#4BC0C0",
+                "#FFCE56",
+                "#E7E9ED",
+                "#36A2EB",
+              ],
+              "data": Array [
+                "6",
+                "7",
+                "3",
+                "3",
+                "6",
+                "3",
+              ],
+              "label": "Character Data Set",
+            },
+          ],
+          "labels": Array [
+            "Intelligence",
+            "Strength",
+            "Speed",
+            "Durability",
+            "Energy Projection",
+            "Fighting Ability",
+          ],
+        }
+      }
+    />
+  </div>
+</div>
+`;
