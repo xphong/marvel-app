@@ -39,7 +39,7 @@ app.use(webpackHotMiddleware(webpackCompiler));
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
 app.use('/api/v1/characters', require('./server/characters/charactersRoutes'));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
