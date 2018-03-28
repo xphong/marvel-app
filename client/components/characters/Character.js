@@ -2,28 +2,28 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 export default class Character extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
   render() {
-    const {character} = this.props;
+    const { character } = this.props;
 
     return (
-      <div className='ui card fadeIn-animation'>
-        <div className='image'>
+      <div className="ui card fadeIn-animation">
+        <div className="image">
             <img src={character.image} />
         </div>
-        <div className='content'>
-            <div className='header'>{character.name}</div>
-            <div className='description'>
+        <div className="content">
+            <div className="header">{character.name}</div>
+            <div className="description">
               {character.description}
             </div>
           </div>
-          <div className='extra content'>
-            <span className='right floated'>
+          <div className="extra content">
+            <span className="right floated">
               <a target="_blank" href={character.url}>
-                <button className='ui icon purple tiny button'>
+                <button className="ui icon purple tiny button">
                     More Info
                 </button>
               </a>

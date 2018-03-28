@@ -13,10 +13,10 @@ export class PowerLevels extends Component {
   }
 
   render() {
-    const {powerLevels, actions} = this.props;
+    const { powerLevels, actions } = this.props;
 
     return (
-      <div className='fadeIn-page-animation'>
+      <div className="fadeIn-page-animation">
         {powerLevels.isLoading ? <Spinner /> : <PowerLevelList powerLevels={powerLevels} actions={actions} />}
       </div>
     );

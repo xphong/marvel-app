@@ -28,12 +28,12 @@ function receiveError(data) {
 }
 
 function createCharacterData(data) {
-  let characterData = {};
+  const characterData = {};
 
   characterData.name = data.name;
   characterData.url = (data.urls[1] ? data.urls[1].url : data.urls[0].url);
   characterData.image = data.thumbnail.path + '.' + data.thumbnail.extension;
-  characterData.description =  (data.description === '' ? 'No description listed for this character.' : characterData.description = data.description);
+  characterData.description = (data.description === '' ? 'No description listed for this character.' : characterData.description = data.description);
 
   return characterData;
 }
@@ -41,7 +41,7 @@ function createCharacterData(data) {
 export function fetchCharactersByName(name) {
   const url = `${ENDPOINT}/characters?limit=${CHARACTER_LIMIT}&name=${name}`;
   const opts = {
-    url: url,
+    url,
     timeout: 10000,
     method: 'get',
     responseType: 'json'
@@ -50,7 +50,7 @@ export function fetchCharactersByName(name) {
   return dispatch => {
     dispatch(requestCharactersByName());
     return axios(opts)
-      .then(function(response) {
+      .then(function (response) {
         let data = [];
 
         if (response.data) {
@@ -59,7 +59,7 @@ export function fetchCharactersByName(name) {
           dispatch(receiveCharacters(data));
         }
       })
-      .catch(function(response){
+      .catch(function (response) {
         dispatch(receiveError(response.data));
       });
   };

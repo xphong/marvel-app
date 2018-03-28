@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 export default class PowerLevelRow extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
   render() {
-    const {characterData, index} = this.props;
+    const { characterData, index } = this.props;
 
     return (
       <tr>
@@ -19,8 +19,8 @@ export default class PowerLevelRow extends Component {
         </td>
         <td>{characterData.AveragePowerLevel}</td>
         <td>
-          <a href={characterData.Profile_Link} target='_blank'>
-              <i className='external icon'></i>
+          <a href={characterData.Profile_Link} target="_blank">
+              <i className="external icon" />
           </a>
         </td>
       </tr>

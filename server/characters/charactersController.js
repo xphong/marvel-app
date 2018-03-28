@@ -19,9 +19,9 @@ exports.get = (req, res) => {
     const url = `${baseUrl}${query}${auth}`;
 
     request.get({
-      url: url,
+      url,
       json: true,
-      headers: {'User-Agent': 'request'}
+      headers: { 'User-Agent': 'request' }
     }, (error, response, data) => {
       if (error) {
         console.log('Error:', error);

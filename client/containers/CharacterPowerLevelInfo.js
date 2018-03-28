@@ -6,7 +6,7 @@ import CharacterPowerLevelRadarChart from '../components/characterpowerlevels/Ch
 import CharacterPowerLevelBarChart from '../components/characterpowerlevels/CharacterPowerLevelBarChart';
 
 export default class CharacterPowerLevelInfo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
@@ -38,8 +38,8 @@ export default class CharacterPowerLevelInfo extends Component {
   }
 
   render() {
-    const {data} = this.props.powerLevels;
-    const {id} = this.props;
+    const { data } = this.props.powerLevels;
+    const { id } = this.props;
     const character = data[id];
 
     if (!character) return null;
@@ -47,9 +47,9 @@ export default class CharacterPowerLevelInfo extends Component {
     const characterChartData = this.getCharacterChartData(character);
 
     return (
-      <div className='ui container center aligned'>
+      <div className="ui container center aligned">
         <CharacterPowerLevelInfoDisplay character={character} />
-        <div className='chart-area'>
+        <div className="chart-area">
           <CharacterPowerLevelRadarChart characterChartData={characterChartData} />
           <CharacterPowerLevelBarChart characterChartData={characterChartData} />
         </div>

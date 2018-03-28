@@ -44,11 +44,11 @@ function createPowerLevelData(powerlevel) {
 }
 
 function sortCharactersByName(data) {
-  var sortedData = data.slice(0);
+  const sortedData = data.slice(0);
 
   sortedData.sort((a, b) => {
-    var textA = a.Name.toUpperCase();
-    var textB = b.Name.toUpperCase();
+    const textA = a.Name.toUpperCase();
+    const textB = b.Name.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
 

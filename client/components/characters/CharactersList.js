@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Character from './Character';
 
 export default class CharactersList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
@@ -14,7 +14,7 @@ export default class CharactersList extends Component {
 
   renderServerError() {
     return (
-      <div className='ui message red'>
+      <div className="ui message red">
         Server Error
       </div>
     );
@@ -22,14 +22,14 @@ export default class CharactersList extends Component {
 
   renderCharactersFound() {
     return (
-      <div className='ui message orange'>
+      <div className="ui message orange">
         No characters found
       </div>
     );
   }
 
   render() {
-    const {characters} = this.props;
+    const { characters } = this.props;
 
     if (characters.error) {
       return this.renderServerError();
@@ -40,7 +40,7 @@ export default class CharactersList extends Component {
     }
 
     return (
-      <div className='ui characters-list cards'>
+      <div className="ui characters-list cards">
         {characters.data.map(this.renderCharacter)}
       </div>
     );

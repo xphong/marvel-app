@@ -15,7 +15,7 @@ export class CharacterPowerLevel extends Component {
   }
 
   render() {
-    const {powerLevels, params} = this.props;
+    const { powerLevels, params } = this.props;
 
     return (
       <div>

@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 export default class SearchCharacterForm extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {characterName: null};
+    this.state = { characterName: null };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -28,26 +28,27 @@ export default class SearchCharacterForm extends Component {
   resetForm() {
     ReactDOM.findDOMNode(this.refs.searchCharacterForm).reset();
     ReactDOM.findDOMNode(this.refs.characterName).focus();
-    this.state = {characterName: null};
+    this.state = { characterName: null };
   }
 
   render() {
     return (
-      <div className='search-character__form'>
-        <form ref='searchCharacterForm'
-              onSubmit={this.handleSearch}
-              onChange={this.handleInputChange}>
+      <div className="search-character__form">
+        <form ref="searchCharacterForm"
+          onSubmit={this.handleSearch}
+          onChange={this.handleInputChange}
+        >
 
-          <div className='ui action input'>
-            <input ref='characterName'
-                   name='characterName'
-                   placeholder='Character Name'
-                   type='text'
-                   required
-                   />
+          <div className="ui action input">
+            <input ref="characterName"
+              name="characterName"
+              placeholder="Character Name"
+              type="text"
+              required
+            />
 
-              <button className='ui icon pink button'>
-                  <i className='search icon'></i>
+              <button className="ui icon pink button">
+                  <i className="search icon" />
               </button>
           </div>
         </form>

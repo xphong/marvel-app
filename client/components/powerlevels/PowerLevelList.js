@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PowerLevelRow from './PowerLevelRow';
 
 export default class PowerLevelList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
@@ -13,10 +13,10 @@ export default class PowerLevelList extends Component {
   }
 
   render() {
-    const {data} = this.props.powerLevels;
+    const { data } = this.props.powerLevels;
 
     return (
-      <table className='ui table'>
+      <table className="ui table">
         <thead>
           <tr>
             <th>Character Name</th>

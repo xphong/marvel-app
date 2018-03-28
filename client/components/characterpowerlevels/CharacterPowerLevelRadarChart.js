@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import { Radar as RadarChart } from 'react-chartjs-2';
 
 export default class CharacterPowerLevelRadarChart extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
   render() {
-    const {characterChartData} = this.props;
+    const { characterChartData } = this.props;
 
     return (
       <div>
         <RadarChart
-          className='chart'
+          className="chart"
           data={characterChartData}
           width={350}
           height={350}
@@ -24,10 +24,10 @@ export default class CharacterPowerLevelRadarChart extends Component {
               display: false
             },
             scale: {
-               ticks: {
-                  maxTicksLimit: 3,
-                  display: false
-               }
+              ticks: {
+                maxTicksLimit: 3,
+                display: false
+              }
             }
           }}
         />

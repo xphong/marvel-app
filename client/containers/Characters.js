@@ -16,7 +16,7 @@ export class Characters extends Component {
   }
 
   render() {
-    const {characters, actions} = this.props;
+    const { characters, actions } = this.props;
 
     return (
       <div>
