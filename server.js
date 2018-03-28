@@ -6,7 +6,9 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const Router = require('react-router');
 
+const routes = require('./client/routes');
 const config = require('./server/config');
 
 const app = express();
@@ -19,10 +21,10 @@ if (app.get('env') === 'development') {
   webpackConfig = require('./webpack.config.prod');
 }
 
-let webpackCompiler = webpack(webpackConfig);
+const webpackCompiler = webpack(webpackConfig);
 
 mongoose.connect(config.database);
-mongoose.connection.on('error', function() {
+mongoose.connection.on('error', function () {
   console.info('Error: Could not connect to MongoDB.');
 });
 
@@ -39,8 +41,18 @@ app.use(webpackHotMiddleware(webpackCompiler));
 app.use('/api/v1/powerlevels', require('./server/powerlevels/powerlevelsRoutes'));
 app.use('/api/v1/characters', require('./server/characters/charactersRoutes'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+app.use(function (req, res) {
+  Router.match({ routes: routes.default, location: req.url }, function (err, redirectLocation, renderProps) {
+    if (err) {
+      res.status(500).send(err.message);
+    } else if (redirectLocation) {
+      res.status(302).redirect(redirectLocation.pathname + redirectLocation.search);
+    } else if (renderProps) {
+      res.status(200).sendFile(path.resolve(__dirname, 'index.html'));
+    } else {
+      res.status(404).send('Page Not Found');
+    }
+  });
 });
 
 app.listen(app.get('port'), (err) => {
