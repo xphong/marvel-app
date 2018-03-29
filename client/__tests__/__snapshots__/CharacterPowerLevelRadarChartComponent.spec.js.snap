@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPowerLevelRadarChart Component should render CharacterPowerLevelRadarChart 1`] = `
+<div>
+  <Radar
+    className="chart"
+    data={
+      Object {
+        "label": "Radar chart of awesomeness",
+      }
+    }
+    height={350}
+    options={
+      Object {
+        "legend": Object {
+          "display": false,
+        },
+        "maintainAspectRatio": false,
+        "scale": Object {
+          "ticks": Object {
+            "display": false,
+            "maxTicksLimit": 3,
+          },
+        },
+      }
+    }
+    width={350}
+  />
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPowerLevelInfoDisplay Component should render CharacterPowerLevelInfoDisplay 1`] = `
+<div>
+  <h1>
+    Rogue
+  </h1>
+  <h4>
+    Average Power Level: 
+    9001
+  </h4>
+  <a
+    target="_blank"
+  >
+    <img
+      className="powerlevel-image fadeIn-animation"
+    />
+  </a>
+</div>
+`;
