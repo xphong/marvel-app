@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PowerLevelRow Component should render PowerLevelRow 1`] = `
+<tr>
+  <td>
+    <Link
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/powerlevels/1"
+    >
+      Storm
+    </Link>
+  </td>
+  <td>
+    9000
+  </td>
+  <td>
+    <a
+      target="_blank"
+    >
+      <i
+        className="external icon"
+      />
+    </a>
+  </td>
+</tr>
+`;

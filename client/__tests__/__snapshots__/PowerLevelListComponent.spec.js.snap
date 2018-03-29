@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PowerLevelList Component should render PowerLevelList 1`] = `
+<table
+  className="ui table"
+>
+  <thead>
+    <tr>
+      <th>
+        Character Name
+      </th>
+      <th>
+        Average Power Level
+      </th>
+      <th>
+        More Info Link
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <PowerLevelRow
+      characterData={
+        Object {
+          "AveragePowerLevel": 9000,
+          "Name": "Storm",
+        }
+      }
+      index={0}
+      key="Storm"
+    />
+  </tbody>
+</table>
+`;
