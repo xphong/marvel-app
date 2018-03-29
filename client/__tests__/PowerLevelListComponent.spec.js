@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PowerLevelList from "../components/powerlevels/PowerLevelList";
+import PowerLevelList from '../components/powerlevels/PowerLevelList';
 
 describe('PowerLevelList Component', () => {
   it('should render PowerLevelList', () => {

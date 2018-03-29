@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharactersList Component should render CharactersList 1`] = `
+<div
+  className="ui characters-list cards"
+>
+  <Character
+    character={
+      Object {
+        "description": "poop",
+        "name": "Hawkeye",
+      }
+    }
+    key="Hawkeye"
+  />
+</div>
+`;

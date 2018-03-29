@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Component should render Character 1`] = `
+<div
+  className="ui card fadeIn-animation"
+>
+  <div
+    className="image"
+  >
+    <img />
+  </div>
+  <div
+    className="content"
+  >
+    <div
+      className="header"
+    >
+      Hawkeye
+    </div>
+    <div
+      className="description"
+    >
+      poop
+    </div>
+  </div>
+  <div
+    className="extra content"
+  >
+    <span
+      className="right floated"
+    >
+      <a
+        target="_blank"
+      >
+        <button
+          className="ui icon purple tiny button"
+        >
+          More Info
+        </button>
+      </a>
+    </span>
+  </div>
+</div>
+`;

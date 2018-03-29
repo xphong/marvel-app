@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PowerLevelRow from "../components/powerlevels/PowerLevelRow";
+import PowerLevelRow from '../components/powerlevels/PowerLevelRow';
 
 describe('PowerLevelRow Component', () => {
   it('should render PowerLevelRow', () => {
