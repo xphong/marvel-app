@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import PowerLevelRow from '../components/powerlevels/PowerLevelRow';
 

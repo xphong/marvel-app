@@ -30,12 +30,12 @@ function receivePowerLevelsError(data) {
 function calculatePowerLevel(character) {
   const numberOfSkills = 6;
 
-  return ((parseInt(character.Intelligence)
-    + parseInt(character.Strength)
-    + parseInt(character.Speed)
-    + parseInt(character.Durability)
-    + parseInt(character.Energy_Projection)
-    + parseInt(character.Fighting_Ability)) / numberOfSkills).toFixed(2);
+  return ((parseInt(character.Intelligence, 10)
+    + parseInt(character.Strength, 10)
+    + parseInt(character.Speed, 10)
+    + parseInt(character.Durability, 10)
+    + parseInt(character.Energy_Projection, 10)
+    + parseInt(character.Fighting_Ability, 10)) / numberOfSkills).toFixed(2);
 }
 
 function createPowerLevelData(powerlevel) {

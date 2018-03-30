@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import { Characters } from '../containers/Characters';
 
@@ -41,7 +40,7 @@ describe('Characters Container', () => {
   it('should call fetchCharactersByName', () => {
     const name = 'Wolverine';
 
-    const { wrapper, props } = setup({
+    const { props } = setup({
       name
     });
 
