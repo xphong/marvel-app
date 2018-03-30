@@ -64,7 +64,6 @@ yarn
 ## TODO:
 
 * Move to ducks modular pattern
-* Clean up eslint errors
 * Sort table
 * Search table
 * Upgrade to React Router v4 🤔
