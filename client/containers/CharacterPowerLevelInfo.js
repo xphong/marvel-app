@@ -6,10 +6,6 @@ import CharacterPowerLevelRadarChart from '../components/characterpowerlevels/Ch
 import CharacterPowerLevelBarChart from '../components/characterpowerlevels/CharacterPowerLevelBarChart';
 
 export default class CharacterPowerLevelInfo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getCharacterChartData(character) {
     const labels = ['Intelligence', 'Strength', 'Speed', 'Durability', 'Energy Projection', 'Fighting Ability'];
     const label = 'Character Data Set';

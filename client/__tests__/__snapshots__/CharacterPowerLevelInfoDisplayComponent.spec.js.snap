@@ -13,6 +13,7 @@ exports[`CharacterPowerLevelInfoDisplay Component should render CharacterPowerLe
     target="_blank"
   >
     <img
+      alt="Image of Rogue"
       className="powerlevel-image fadeIn-animation"
     />
   </a>

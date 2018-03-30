@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 import PowerLevelRow from './PowerLevelRow';
 
 export default class PowerLevelList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderPowerLevelRow(characterData, index) {
     return <PowerLevelRow key={characterData.Name} characterData={characterData} index={index} />;
   }
