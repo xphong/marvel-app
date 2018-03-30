@@ -11,6 +11,7 @@
     "prod": "cross-env NODE_ENV=production npm run start:prod",
     "postinstall": "npm run build",
     "start:prod": "nodemon server.js --exec babel-node NODE_ENV=production",
+    "lint": "eslint .",
     "lint:frontend": "eslint client",
     "lint:backend": "eslint server",
     "test:backend": "./node_modules/.bin/mocha --timeout 10000 --compilers js:babel-core/register server/**",

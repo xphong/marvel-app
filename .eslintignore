@@ -2,4 +2,5 @@ node_modules
 webpack.config.dev.js
 webpack.config.prod.js
 devServer.js
-client/__tests__
+client/__tests__/coverage
+dist
