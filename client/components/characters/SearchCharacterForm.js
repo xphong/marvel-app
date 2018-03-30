@@ -34,7 +34,9 @@ export default class SearchCharacterForm extends Component {
   resetForm() {
     ReactDOM.findDOMNode(this.refs.searchCharacterForm).reset();
     ReactDOM.findDOMNode(this.refs.characterName).focus();
-    this.state = { characterName: null };
+    this.setState({
+      characterName: null
+    });
   }
 
   render() {

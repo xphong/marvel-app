@@ -7,7 +7,9 @@ exports[`Character Component should render Character 1`] = `
   <div
     className="image"
   >
-    <img />
+    <img
+      alt="Image of Hawkeye"
+    />
   </div>
   <div
     className="content"
