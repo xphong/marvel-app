@@ -7,7 +7,7 @@ export const Character = props => {
   return (
     <div className="ui card fadeIn-animation">
       <div className="image">
-          <img src={character.image} />
+          <img src={character.image} alt={"Image of " + character.name} />
       </div>
       <div className="content">
           <div className="header">{character.name}</div>

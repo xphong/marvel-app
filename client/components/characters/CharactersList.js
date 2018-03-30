@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 import Character from './Character';
 
 export default class CharactersList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderCharacter(character) {
     return <Character key={character.name} character={character} />;
   }

@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 
 export default class SearchCharacterForm extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = { characterName: null };
+  constructor() {
+    super();
+
     this.handleSearch = this.handleSearch.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      characterName: null
+    });
   }
 
   handleInputChange(event) {
