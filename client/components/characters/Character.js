@@ -20,7 +20,7 @@ export const Character = props => {
         </span>
         {character.averagePowerLevel ?
           <span className="left floated">
-            <i className="fire icon" />
+            <i className="bolt icon" />
             {character.averagePowerLevel}
           </span> : ""}
       </div>
