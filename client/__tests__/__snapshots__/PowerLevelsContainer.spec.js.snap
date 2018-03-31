@@ -4,7 +4,7 @@ exports[`PowerLevels Container should render PowerLevels 1`] = `
 <div
   className="fadeIn-page-animation"
 >
-  <PowerLevelList
+  <Component
     actions={
       Object {
         "fetchPowerLevels": [MockFunction] {
@@ -14,6 +14,7 @@ exports[`PowerLevels Container should render PowerLevels 1`] = `
         },
       }
     }
+    isLoading={false}
     powerLevels={
       Object {
         "isLoading": false,
@@ -27,6 +28,22 @@ exports[`PowerLevels Container should render PowerLevels with loading spinner 1`
 <div
   className="fadeIn-page-animation"
 >
-  <Spinner />
+  <Component
+    actions={
+      Object {
+        "fetchPowerLevels": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+        },
+      }
+    }
+    isLoading={true}
+    powerLevels={
+      Object {
+        "isLoading": true,
+      }
+    }
+  />
 </div>
 `;

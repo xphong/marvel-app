@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import CharacterPowerLevelInfo from './CharacterPowerLevelInfo';
+import WithLoading from '../components/helpers/WithLoading';
+
+const CharacterPowerLevelInfoWithLoading = WithLoading(CharacterPowerLevelInfo);
 
 export class CharacterPowerLevel extends Component {
   componentDidMount() {
@@ -19,7 +21,7 @@ export class CharacterPowerLevel extends Component {
 
     return (
       <div>
-        {powerLevels.isLoading ? <Spinner /> : <CharacterPowerLevelInfo id={params.id} powerLevels={powerLevels} />}
+        <CharacterPowerLevelInfoWithLoading isLoading={powerLevels.isLoading} id={params.id} powerLevels={powerLevels} />
       </div>
     );
   }

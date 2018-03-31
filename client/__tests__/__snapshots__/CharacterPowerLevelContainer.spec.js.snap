@@ -2,8 +2,9 @@
 
 exports[`CharacterPowerLevel Container should render CharacterPowerLevel 1`] = `
 <div>
-  <CharacterPowerLevelInfo
+  <Component
     id={1}
+    isLoading={false}
     powerLevels={
       Object {
         "data": Array [],
@@ -16,6 +17,15 @@ exports[`CharacterPowerLevel Container should render CharacterPowerLevel 1`] = `
 
 exports[`CharacterPowerLevel Container should render CharacterPowerLevel with loading spinner 1`] = `
 <div>
-  <Spinner />
+  <Component
+    id={1}
+    isLoading={true}
+    powerLevels={
+      Object {
+        "data": Array [],
+        "isLoading": true,
+      }
+    }
+  />
 </div>
 `;

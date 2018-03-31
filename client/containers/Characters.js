@@ -4,9 +4,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as CharactersActions from '../actions/CharactersActions';
-import Spinner from '../components/ui/Spinner';
 import SearchCharacterForm from '../components/characters/SearchCharacterForm';
 import CharactersList from '../components/characters/CharactersList';
+import WithLoading from '../components/helpers/WithLoading';
+
+const CharactersListWithLoading = WithLoading(CharactersList);
 
 export class Characters extends Component {
   componentDidMount() {
@@ -18,12 +20,10 @@ export class Characters extends Component {
   render() {
     const { characters, actions } = this.props;
 
-    return (
-      <div>
+    return <div>
         <SearchCharacterForm actions={actions} />
-        {characters.isLoading ? <Spinner /> : <CharactersList characters={characters} />}
-      </div>
-    );
+        <CharactersListWithLoading isLoading={characters.isLoading} characters={characters} />
+      </div>;
   }
 }
 

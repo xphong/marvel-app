@@ -9,12 +9,13 @@ exports[`Characters Container should render Characters 1`] = `
       }
     }
   />
-  <CharactersList
+  <Component
     characters={
       Object {
         "isLoading": false,
       }
     }
+    isLoading={false}
   />
 </div>
 `;
@@ -28,6 +29,13 @@ exports[`Characters Container should render Characters with loading spinner 1`] 
       }
     }
   />
-  <Spinner />
+  <Component
+    characters={
+      Object {
+        "isLoading": true,
+      }
+    }
+    isLoading={true}
+  />
 </div>
 `;

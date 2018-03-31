@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Spinner from '../components/ui/Spinner';
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import PowerLevelList from '../components/powerlevels/PowerLevelList';
+import WithLoading from '../components/helpers/WithLoading';
+
+const PowerLevelListWithLoading = WithLoading(PowerLevelList);
 
 export class PowerLevels extends Component {
   componentDidMount() {
@@ -17,7 +19,7 @@ export class PowerLevels extends Component {
 
     return (
       <div className="fadeIn-page-animation">
-        {powerLevels.isLoading ? <Spinner /> : <PowerLevelList powerLevels={powerLevels} actions={actions} />}
+        <PowerLevelListWithLoading isLoading={powerLevels.isLoading} powerLevels={powerLevels} actions={actions} />
       </div>
     );
   }
