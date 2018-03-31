@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import CharacterPowerLevelInfo from './CharacterPowerLevelInfo';
-import WithLoading from '../components/helpers/WithLoading';
+import WithLoading from '../components/hocs/WithLoading';
 
 const CharacterPowerLevelInfoWithLoading = WithLoading(CharacterPowerLevelInfo);
 

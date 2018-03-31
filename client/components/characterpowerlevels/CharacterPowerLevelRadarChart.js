@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Radar as RadarChart } from 'react-chartjs-2';
-import WithChart from '../helpers/WithChart';
+import { Radar } from 'react-chartjs-2';
+import WithChart from '../hocs/WithChart';
 
-const RadarChartWithDefaults = WithChart(RadarChart);
+const RadarChart = WithChart(Radar);
 
 export const CharacterPowerLevelRadarChart = props => {
   const { characterChartData } = props;
@@ -20,7 +20,7 @@ export const CharacterPowerLevelRadarChart = props => {
 
   return (
     <div>
-      <RadarChartWithDefaults data={characterChartData} chartOptions={chartOptions} />
+      <RadarChart data={characterChartData} chartOptions={chartOptions} />
     </div>
   );
 };

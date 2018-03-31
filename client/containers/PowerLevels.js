@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import * as PowerLevelActions from '../actions/PowerLevelActions';
 import PowerLevelList from '../components/powerlevels/PowerLevelList';
-import WithLoading from '../components/helpers/WithLoading';
+import WithLoading from '../components/hocs/WithLoading';
 
 const PowerLevelListWithLoading = WithLoading(PowerLevelList);
 

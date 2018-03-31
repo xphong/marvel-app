@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as CharactersActions from '../actions/CharactersActions';
 import SearchCharacterForm from '../components/characters/SearchCharacterForm';
 import CharactersList from '../components/characters/CharactersList';
-import WithLoading from '../components/helpers/WithLoading';
+import WithLoading from '../components/hocs/WithLoading';
 
 const CharactersListWithLoading = WithLoading(CharactersList);
 

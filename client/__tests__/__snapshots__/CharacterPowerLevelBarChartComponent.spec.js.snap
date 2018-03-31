@@ -2,23 +2,12 @@
 
 exports[`CharacterPowerLevelBarChart Component should render CharacterPowerLevelBarChart 1`] = `
 <div>
-  <Bar
-    className="chart"
+  <Component
     data={
       Object {
         "label": "Character data set",
       }
     }
-    height={350}
-    options={
-      Object {
-        "legend": Object {
-          "display": false,
-        },
-        "maintainAspectRatio": false,
-      }
-    }
-    width={350}
   />
 </div>
 `;
