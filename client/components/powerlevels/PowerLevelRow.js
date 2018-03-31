@@ -12,7 +12,7 @@ export const PowerLevelRow = props => {
           {characterData.Name}
         </Link>
       </td>
-      <td>{characterData.AveragePowerLevel}</td>
+      <td>{characterData.averagePowerLevel}</td>
       <td>
         <a href={characterData.Profile_Link} target="_blank">
             <i className="external icon" />

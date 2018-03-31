@@ -11,9 +11,7 @@ exports[`PowerLevelRow Component should render PowerLevelRow 1`] = `
       Storm
     </Link>
   </td>
-  <td>
-    9000
-  </td>
+  <td />
   <td>
     <a
       target="_blank"

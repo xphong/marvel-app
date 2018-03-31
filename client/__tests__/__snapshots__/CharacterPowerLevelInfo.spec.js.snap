@@ -4,7 +4,7 @@ exports[`CharacterPowerLevelInfo Container should render CharacterPowerLevelInfo
 <div
   className="ui container center aligned"
 >
-  <CharacterPowerLevelInfoDisplay
+  <Character
     character={
       Object {
         "Durability": "3",

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import CharacterPowerLevelInfoDisplay from '../components/characterpowerlevels/CharacterPowerLevelInfoDisplay';
+import Character from '../components/characters/Character';
 import CharacterPowerLevelRadarChart from '../components/characterpowerlevels/CharacterPowerLevelRadarChart';
 import CharacterPowerLevelBarChart from '../components/characterpowerlevels/CharacterPowerLevelBarChart';
 
@@ -44,7 +44,7 @@ export default class CharacterPowerLevelInfo extends Component {
 
     return (
       <div className="ui container center aligned">
-        <CharacterPowerLevelInfoDisplay character={character} />
+        <Character character={character} />
         <div className="chart-area">
           <CharacterPowerLevelRadarChart characterChartData={characterChartData} />
           <CharacterPowerLevelBarChart characterChartData={characterChartData} />

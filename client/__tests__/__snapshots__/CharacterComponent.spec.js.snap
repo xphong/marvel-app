@@ -2,7 +2,7 @@
 
 exports[`Character Component should render Character 1`] = `
 <div
-  className="ui card fadeIn-animation"
+  className="ui centered card fadeIn-animation"
 >
   <div
     className="image"
