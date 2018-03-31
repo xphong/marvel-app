@@ -43,6 +43,7 @@
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-react-hmre": "1.1.1",
+    "babel-preset-stage-2": "^6.24.1",
     "body-parser": "1.14.1",
     "chai": "3.5.0",
     "chart.js": "2.7.1",
