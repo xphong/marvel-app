@@ -2,30 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Radar as RadarChart } from 'react-chartjs-2';
+import WithChart from '../helpers/WithChart';
+
+const RadarChartWithDefaults = WithChart(RadarChart);
 
 export const CharacterPowerLevelRadarChart = props => {
   const { characterChartData } = props;
 
+  const chartOptions = {
+    scale: {
+      ticks: {
+        maxTicksLimit: 3,
+        display: false
+      }
+    }
+  };
+
   return (
     <div>
-      <RadarChart
-        className="chart"
-        data={characterChartData}
-        width={350}
-        height={350}
-        options={{
-          maintainAspectRatio: false,
-          legend: {
-            display: false
-          },
-          scale: {
-            ticks: {
-              maxTicksLimit: 3,
-              display: false
-            }
-          }
-        }}
-      />
+      <RadarChartWithDefaults data={characterChartData} chartOptions={chartOptions} />
     </div>
   );
 };
