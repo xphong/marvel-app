@@ -76,7 +76,7 @@ export const fetchPowerLevels = () => {
     responseType: 'json'
   };
 
-  return dispatch => {
+  return async dispatch => {
     dispatch(requestPowerLevels());
 
     const powerLevelsSessionData = sessionStorage.getItem('powerlevels-data');
@@ -85,18 +85,18 @@ export const fetchPowerLevels = () => {
       return dispatch(receivePowerLevels(JSON.parse(powerLevelsSessionData)));
     }
 
-    return axios(opts)
-      .then(response => {
-        const { data } = response;
+    try {
+      const { data } = await axios(opts);
 
-        if (data && data.length) {
-          const powerLevelsData = createPowerLevelsData(data);
+      if (data && data.length) {
+        const powerLevelsData = createPowerLevelsData(data);
 
-          sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
+        sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
 
-          return dispatch(receivePowerLevels(powerLevelsData));
-        }
-      })
-      .catch(response => dispatch(receivePowerLevelsError(response.data)));
+        dispatch(receivePowerLevels(powerLevelsData));
+      }
+    } catch (e) {
+      dispatch(receivePowerLevelsError(e));
+    }
   };
 }
