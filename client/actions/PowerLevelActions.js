@@ -4,13 +4,13 @@ import { compose } from 'redux';
 import * as types from '../constants/ActionTypes';
 import { ENDPOINT } from '../constants/AppConstants';
 
-function requestPowerLevels() {
+const requestPowerLevels = () => {
   return {
     type: types.REQUEST_POWERLEVELS
   };
 }
 
-function receivePowerLevels(data) {
+const receivePowerLevels = data => {
   return {
     type: types.RECEIVE_POWERLEVELS,
     payload: {
@@ -19,7 +19,7 @@ function receivePowerLevels(data) {
   };
 }
 
-function receivePowerLevelsError(data) {
+const receivePowerLevelsError = data => {
   return {
     type: types.RECEIVE_POWERLEVELS_ERROR,
     payload: {
@@ -28,7 +28,7 @@ function receivePowerLevelsError(data) {
   };
 }
 
-function calculatePowerLevel(character) {
+const calculatePowerLevel = character => {
   const numberOfSkills = 6;
 
   return ((parseInt(character.Intelligence, 10)
@@ -39,7 +39,7 @@ function calculatePowerLevel(character) {
     + parseInt(character.Fighting_Ability, 10)) / numberOfSkills).toFixed(2);
 }
 
-function createCharacter(data) {
+const createCharacter = data => {
   const character = {
     ...data
   };
@@ -54,7 +54,7 @@ function createCharacter(data) {
 
 const createCharacterMap = data => data.map(createCharacter);
 
-function sortCharactersByName(data) {
+const sortCharactersByName = data => {
   const sortedData = data.slice(0);
 
   sortedData.sort((a, b) => {
@@ -68,7 +68,7 @@ function sortCharactersByName(data) {
 
 const createPowerLevelsData = compose(sortCharactersByName, createCharacterMap);
 
-export function fetchPowerLevels() {
+export const fetchPowerLevels = () => {
   const opts = {
     url: `${ENDPOINT}/powerlevels`,
     timeout: 10000,
