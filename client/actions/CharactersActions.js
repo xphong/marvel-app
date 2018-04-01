@@ -3,13 +3,13 @@ import axios from 'axios';
 import * as types from '../constants/ActionTypes';
 import { ENDPOINT, CHARACTER_LIMIT } from '../constants/AppConstants';
 
-function requestCharactersByName() {
+const requestCharactersByName = () => {
   return {
     type: types.REQUEST_CHARACTERS_BY_NAME
   };
 }
 
-function receiveCharacters(data) {
+const receiveCharacters = data => {
   return {
     type: types.RECEIVE_CHARACTERS,
     payload: {
@@ -18,7 +18,7 @@ function receiveCharacters(data) {
   };
 }
 
-function receiveError(data) {
+const receiveError = data => {
   return {
     type: types.RECEIVE_CHARACTERS_ERROR,
     payload: {
@@ -27,7 +27,7 @@ function receiveError(data) {
   };
 }
 
-function createCharacterData(data) {
+const createCharacterData = data => {
   const characterData = {};
 
   characterData.name = data.name;
@@ -38,7 +38,7 @@ function createCharacterData(data) {
   return characterData;
 }
 
-export function fetchCharactersByName(name) {
+export const fetchCharactersByName = name => {
   const url = `${ENDPOINT}/characters?limit=${CHARACTER_LIMIT}&name=${name}`;
   const opts = {
     url,
