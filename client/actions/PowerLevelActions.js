@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { compose } from 'redux';
 
 import * as types from '../constants/ActionTypes';
 import { ENDPOINT } from '../constants/AppConstants';
@@ -38,18 +39,20 @@ function calculatePowerLevel(character) {
     + parseInt(character.Fighting_Ability, 10)) / numberOfSkills).toFixed(2);
 }
 
-function createCharacterData(data) {
-  const characterData = {
+function createCharacter(data) {
+  const character = {
     ...data
   };
 
-  characterData.averagePowerLevel = calculatePowerLevel(data);
-  characterData.name = data.Name;
-  characterData.url = data.Profile_Link;
-  characterData.image = data.Image_Link;
+  character.averagePowerLevel = calculatePowerLevel(data);
+  character.name = data.Name;
+  character.url = data.Profile_Link;
+  character.image = data.Image_Link;
 
-  return characterData;
+  return character;
 }
+
+const createCharacterMap = data => data.map(createCharacter);
 
 function sortCharactersByName(data) {
   const sortedData = data.slice(0);
@@ -62,6 +65,8 @@ function sortCharactersByName(data) {
 
   return sortedData;
 }
+
+const createPowerLevelsData = compose(sortCharactersByName, createCharacterMap);
 
 export function fetchPowerLevels() {
   const opts = {
@@ -85,7 +90,7 @@ export function fetchPowerLevels() {
         const { data } = response;
 
         if (data && data.length) {
-          const powerLevelsData = sortCharactersByName(data.map(createCharacterData));
+          const powerLevelsData = createPowerLevelsData(data);
 
           sessionStorage.setItem('powerlevels-data', JSON.stringify(powerLevelsData));
 
