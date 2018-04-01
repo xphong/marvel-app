@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import Character from '../components/characters/Character';
-import CharacterPowerLevelRadarChart from '../components/characterpowerlevels/CharacterPowerLevelRadarChart';
-import CharacterPowerLevelBarChart from '../components/characterpowerlevels/CharacterPowerLevelBarChart';
+import Character from '../characters/Character';
+import CharacterPowerLevelRadarChart from '../characterpowerlevels/CharacterPowerLevelRadarChart';
+import CharacterPowerLevelBarChart from '../characterpowerlevels/CharacterPowerLevelBarChart';
 
 export default class CharacterPowerLevelInfo extends Component {
   getCharacterChartData(character) {
     const labels = ['Intelligence', 'Strength', 'Speed', 'Durability', 'Energy Projection', 'Fighting Ability'];
     const label = 'Character Data Set';
     const backgroundColor = ['#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'];
-    const data = [];
-
-    data.push(character.Intelligence);
-    data.push(character.Strength);
-    data.push(character.Speed);
-    data.push(character.Durability);
-    data.push(character.Energy_Projection);
-    data.push(character.Fighting_Ability);
+    const data = [
+      character.Intelligence,
+      character.Strength,
+      character.Speed,
+      character.Durability,
+      character.Energy_Projection,
+      character.Fighting_Ability
+    ];
 
     const characterChartData = {
       labels,

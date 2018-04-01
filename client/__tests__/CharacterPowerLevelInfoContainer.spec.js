@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CharacterPowerLevelInfo from '../containers/CharacterPowerLevelInfo';
+import CharacterPowerLevelInfo from '../components/characterpowerlevels//CharacterPowerLevelInfo';
 
 function setup({ isLoading = false, id = 0 } = {}) {
   const props = {
