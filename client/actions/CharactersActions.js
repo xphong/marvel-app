@@ -27,7 +27,7 @@ const receiveError = data => {
   };
 }
 
-const createCharacterData = data => {
+const createCharacter = data => {
   const characterData = {};
 
   characterData.name = data.name;
@@ -38,6 +38,8 @@ const createCharacterData = data => {
   return characterData;
 }
 
+const createCharacterMap = data => data.map(createCharacter);
+
 export const fetchCharactersByName = name => {
   const url = `${ENDPOINT}/characters?limit=${CHARACTER_LIMIT}&name=${name}`;
   const opts = {
@@ -47,20 +49,18 @@ export const fetchCharactersByName = name => {
     responseType: 'json'
   };
 
-  return dispatch => {
+  return async dispatch => {
     dispatch(requestCharactersByName());
-    return axios(opts)
-      .then(function (response) {
-        let data = [];
 
-        if (response.data) {
-          data = response.data.results.map(createCharacterData);
+    try {
+      const { data } = await axios(opts);
 
-          dispatch(receiveCharacters(data));
-        }
-      })
-      .catch(function (response) {
-        dispatch(receiveError(response.data));
-      });
+      if (data && data.results) {
+        const charactersData = createCharacterMap(data.results);
+        dispatch(receiveCharacters(charactersData));
+      }
+    } catch (e) {
+      dispatch(receiveError(e));
+    }
   };
 }
