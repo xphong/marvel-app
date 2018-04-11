@@ -10,6 +10,7 @@ before_script:
 - mongoimport --db marvel --collection powerlevels --type json --file data/powerlevels.json --jsonArray
 - npm install -g codeclimate-test-reporter
 script:
+- npm run lint
 - npm run test:coverage
 - npm run test:backend
 after_success:
